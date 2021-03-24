@@ -129,6 +129,7 @@ const header_dateTime = (weekday) => {
             marginLeft: marginLeft,
             textDecoration: `underline solid ${underlines[0]}`
         };
+        default: return null;
     }
 };
 
@@ -238,10 +239,27 @@ const searchField = () => {
     };
 };
 
+const body = (selection) => {
+    return selection === 'light' ? {
+        backgroundImage: 'linear-gradient(-45deg, #ffffff, #ff8c00)',
+    } : {
+        backgroundImage: 'linear-gradient(-45deg, #000000, #696969, #ff8c00)',
+    };
+};
+
+const rootElement = () => {
+    return {
+        display: 'flex', 
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        alignContent: 'center'
+    };
+};
+
 //   styling tool exporting
 
 export default {
-    header_first, header_second, failure, fetchingButton, row, column, infoRow, header_optional, header_dateTime,
+    body, header_first, header_second, failure, fetchingButton, row, column, infoRow, header_optional, header_dateTime,
     running, searchButtons, searchField, selection, sortingButton, sortings, success, text, larger_text,
-    footer_first, footer_second, footer_third, tech_first, tech_second
+    footer_first, footer_second, footer_third, tech_first, tech_second, rootElement
 };

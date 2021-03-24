@@ -1,4 +1,6 @@
 {
+  "author": "RedFoxFinn",
+  "homepage": "https://RedFoxFinn.github.io/",
   "name": "redfoxfinn_io",
   "version": "0.1.0",
   "private": true,
@@ -19,8 +21,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --verbose --transformIgnorePatterns 'node_modules/*'",
+    "eject": "react-scripts eject",
+    "cm": "git-cz",
+    "release": "standard-version",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +47,22 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "gh-pages": "^3.1.0",
+    "husky": "^5.2.0",
+    "standard-version": "^9.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
