@@ -2,7 +2,18 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import {render, screen} from '@testing-library/react';
 import uuid from 'uuid';
+import Navigator from './navigator';
 
 describe('ui unit tests - navigator', () => {
-  it('', () => {});
+  const id = uuid;
+  beforeEach(() => render(<Navigator id={`${id}`}/>));
+  let dummy = false;
+  it('dummy', () => {
+    expect(dummy).toBe(false);
+    dummy = true;
+    expect(dummy).toBe(true);
+  });
+  it('navigator', () => {
+    expect(dummy).toBe(false);
+  });
 });

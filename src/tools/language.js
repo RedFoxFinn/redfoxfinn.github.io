@@ -12,9 +12,22 @@ const checkLang = () => {
 const setLang = (lang) => {
   if (lang === 'en' || lang === 'fi') {
     localStorage.setItem('rff.io.lang',lang);
-    return {};
+    return {
+      action: 'set',
+      lang: lang,
+      status: 'done'
+    };
   } else {
-    return {};
+    let setLang = localStorage.getItem('rff.io.lang');
+    if (!setLang) {
+      localStorage.setItem('rff.io.lang', 'en');
+      setLang = localStorage.getItem('rff.io.lang');
+    }
+    return {
+      action: 'autoSet',
+      lang: setLang,
+      status: 'done'
+    };
   }
 }
 

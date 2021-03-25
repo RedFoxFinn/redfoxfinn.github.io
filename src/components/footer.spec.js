@@ -14,6 +14,7 @@ describe('ui unit tests - footer', () => {
     expect(dummy).toBe(true);
   });
   it('footer', () => {
+    const component = screen.queryByTestId(id);
     expect(dummy).toBe(false);
   });
 });
