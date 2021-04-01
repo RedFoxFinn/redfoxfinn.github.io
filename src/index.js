@@ -4,10 +4,11 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
 import Root from './components/root';
+import text from './tools/text';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Root/>
+    <Root id={`${text.appId()}`}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

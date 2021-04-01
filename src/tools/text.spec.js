@@ -14,11 +14,23 @@ describe('tool unit tests - text - info', () => {
   });
   it('author', () => {
     const author = text.author();
+    expect(author).toBeTruthy();
     expect(author).toMatch(packageInfo.author);
   });
   it('version', () => {
     const version = text.version();
+    expect(version).toBeTruthy();
     expect(version).toMatch(packageInfo.version);
+  });
+  it('appId', () => {
+    const appId = text.appId();
+    expect(appId).toBeTruthy();
+    expect(appId).toMatch(packageInfo.appId);
+  });
+  it('appName', () => {
+    const appName = text.appName();
+    expect(appName).toBeTruthy();
+    expect(appName).toMatch(packageInfo.appName);
   });
 });
 
@@ -42,7 +54,7 @@ describe('tool unit tests - text - navigation', () => {
     expect(nav).toMatch(content.navigation[0].en.toString());
   });
   it('home - unknown', () => {
-    const nav = text.navHome(randomLang.toString());
+    const nav = text.navHome(`${randomLang}`);
     expect(nav).toMatch(content.navigation[0].en.toString());
   });
   it('about - default', () => {
@@ -58,7 +70,7 @@ describe('tool unit tests - text - navigation', () => {
     expect(nav).toMatch(content.navigation[3].en.toString());
   });
   it('about - unknown', () => {
-    const nav = text.navAbout(randomLang.toString());
+    const nav = text.navAbout(`${randomLang}`);
     expect(nav).toMatch(content.navigation[3].en.toString());
   });
   it('cv - default', () => {
@@ -74,7 +86,7 @@ describe('tool unit tests - text - navigation', () => {
     expect(nav).toMatch(content.navigation[1].en.toString());
   });
   it('cv - unknown', () => {
-    const nav = text.navCV(randomLang.toString());
+    const nav = text.navCV(`${randomLang}`);
     expect(nav).toMatch(content.navigation[1].en.toString());
   });
   it('links - default', () => {
@@ -90,7 +102,7 @@ describe('tool unit tests - text - navigation', () => {
     expect(nav).toMatch(content.navigation[2].en.toString());
   });
   it('links - unknown', () => {
-    const nav = text.navLinks(randomLang.toString());
+    const nav = text.navLinks(`${randomLang}`);
     expect(nav).toMatch(content.navigation[2].en.toString());
   });
 });
@@ -115,7 +127,7 @@ describe('tool unit tests - text - content', () => {
     expect(home).toMatch(content.home.en.toString());
   });
   it('home - unknown', () => {
-    const home = text.home(randomLang.toString());
+    const home = text.home(`${randomLang}`);
     expect(home).toMatch(content.home.en.toString());
   });
 });

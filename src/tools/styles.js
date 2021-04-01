@@ -62,7 +62,7 @@ const header_optional = () => {
 
 const footer_first = () => {
     return {
-        fontSize: '2em',
+        fontSize: '1em',
         color: 'black'
     };
 };
@@ -70,7 +70,8 @@ const footer_first = () => {
 const footer_second = () => {
     return {
         fontSize: '1em',
-        color: 'grey'
+        color: 'grey',
+        marginLeft: '0.5em'
     };
 };
 const footer_third = () => {

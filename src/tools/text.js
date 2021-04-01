@@ -2,11 +2,19 @@ import packageInfo from '../../package.json';
 import content from '../data/text.json';
 
 const author = () => {
-  return packageInfo.author;
+  return packageInfo.author.toString();
 };
 
 const version = () => {
-  return packageInfo.version;
+  return packageInfo.version.toString();
+};
+
+const appName = () => {
+  return packageInfo.appName.toString();
+};
+
+const appId = () => {
+  return packageInfo.appId.toString();
 };
 
 const home = (lang) => {
@@ -29,8 +37,12 @@ const navLinks = (lang) => {
   return lang === 'fi' ? content.navigation[2].fi.toString() : content.navigation[2].en.toString();
 };
 
+const themeSelectorDark = (lang, current) => {};
+
+const themeSelectorLight = (lang, current) => {};
+
 export default {
-  author, version,
+  author, version, appId, appName,
   home,
   navHome, navAbout, navCV, navLinks
 };

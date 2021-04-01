@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/root.jsx</title>
+    <title>Code coverage report for src/tools/idGen.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> root.jsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/tools</a> idGen.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
@@ -79,74 +79,68 @@
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
-import React, {} from 'react';
-import { HashRouter, Route } from 'react-router-dom';
-import styles from '../tools/styles';
-import Home from './home';
-import About from './about';
-import CV from './cv';
-import Header from './header';
-import Footer from './footer';
-import Navigator from './navigator';
-&nbsp;
-const Root = (props) =&gt; {
-  return &lt;HashRouter&gt;
-    &lt;article style={styles.rootElement()}&gt;
-      &lt;Header/&gt;
-      &lt;Navigator/&gt;
-      &lt;Route exact path='/' component={Home}/&gt;
-      &lt;Route path='/about' component={About}/&gt;
-      &lt;Route path='/cv' component={CV}/&gt;
-      &lt;Footer/&gt;
-    &lt;/article&gt;
-  &lt;/HashRouter&gt;;
+const idGen = (parentId, idFor) =&gt; {
+  switch (idFor) {
+    case 'app': return `${parentId}.app`;
+    case 'header': return `${parentId}.app.header`;
+    case 'footer': return `${parentId}.app.footer`;
+    case 'navigator': return `${parentId}.app.navigator`;
+    case 'home': return `${parentId}.app.home`;
+    case 'about': return `${parentId}.app.about`;
+    case 'cv': return `${parentId}.app.cv`;
+    case 'links': return `${parentId}.app.links`;
+    case 'navHome': return `${parentId}.navHome`;
+    case 'navCV': return `${parentId}.navCV`;
+    case 'navAbout': return `${parentId}.navAbout`;
+    case 'navLinks': return `${parentId}.navLinks`;
+    case 'text': return `${parentId}.text`;
+    case 'shortText': return `${parentId}.shortText`;
+    case 'longText': return `${parentId}.longText`;
+    default: return `${parentId}.default`;
+  }
 };
 &nbsp;
-export default Root;</pre></td></tr></table></pre>
+export default idGen;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 01 2021 18:52:44 GMT+0300 (Eastern European Summer Time)
+                at Thu Apr 01 2021 19:58:05 GMT+0300 (Eastern European Summer Time)
             </div>
         </div>
-        <script src="../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../sorter.js"></script>
-        <script src="../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     

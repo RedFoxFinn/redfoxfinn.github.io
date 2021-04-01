@@ -2,6 +2,8 @@
   "author": "RedFoxFinn",
   "homepage": "https://RedFoxFinn.github.io/",
   "name": "redfoxfinn_io",
+  "appName": "RedFoxFinn.github.io",
+  "appId": "rff.dev.gh.io",
   "version": "0.2.3",
   "private": true,
   "dependencies": {
@@ -21,7 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage --verbose --transformIgnorePatterns 'node_modules/*'",
+    "test": "react-scripts test --coverage --verbose --noStackTrace --transformIgnorePatterns 'node_modules/*'",
     "eject": "react-scripts eject",
     "cm": "git-cz",
     "release": "standard-version",
@@ -64,5 +66,12 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "jest": {
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ]
   }
 }
