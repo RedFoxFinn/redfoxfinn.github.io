@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](///compare/v0.2.3...v0.3.0) (2021-04-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* **idgen, text:** new idGen is required in most components and old id's won't work. various
+refactoring done.
+
+### Features
+
+* **idgen, text:** new tool: idGen, new functions: text, tests, new components a0fac2c
+
 ### [0.2.3](///compare/v0.2.2...v0.2.3) (2021-03-30)
 
 ### [0.2.2](///compare/v0.2.1...v0.2.2) (2021-03-25)
