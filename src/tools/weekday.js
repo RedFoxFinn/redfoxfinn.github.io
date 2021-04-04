@@ -23,7 +23,7 @@ const weekdays = [
   }
 ];
 
-const weekday = (lang === 'en', dayOfWeek) => {
+const weekday = (lang, dayOfWeek) => {
   if (dayOfWeek >= 0 && dayOfWeek <=6) {
     return lang === 'en' ? weekdays[dayOfWeek].en : weekdays[dayOfWeek].fi;
   } else {

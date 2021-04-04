@@ -1,4 +1,11 @@
 
+/*
+  Author:       RedFoxFinn - Antti Aarnio
+  Project:      RedFoxFinn.github.io
+  File:         ./src/tools/idGen.js
+  Description:  Tool that generates id's for the components or elements using parent id
+*/
+
 const idGen = (parentId, idFor) => {
   switch (idFor) {
     case 'app': return `${parentId}.app`;

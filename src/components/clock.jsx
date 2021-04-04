@@ -1,3 +1,11 @@
+
+/*
+  Author:       RedFoxFinn - Antti Aarnio
+  Project:      RedFoxFinn.github.io
+  File:         ./src/components/clock.jsx
+  Description:  Component that shows current date and time
+*/
+
 import React, {useEffect, useState} from 'react';
 import styles from '../tools/styles';
 

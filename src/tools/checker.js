@@ -1,4 +1,11 @@
 
+/*
+  Author:       RedFoxFinn - Antti Aarnio
+  Project:      RedFoxFinn.github.io
+  File:         ./src/tools/checker.js
+  Description:  Tool that does various checks for other tools or components
+*/
+
 const OPT = Object.freeze({
   LANG: ['en','fi'],
   THEME: ['dark', 'light']

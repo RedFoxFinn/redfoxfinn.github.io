@@ -1,8 +1,17 @@
-import styles from '../tools/styles';
+
+/*
+  Author:       RedFoxFinn - Antti Aarnio
+  Project:      RedFoxFinn.github.io
+  File:         ./src/tools/styles.js
+  Description:  Tool that sets or gets theme by using localStorage. Checks validity by using checker tools.
+*/
+
+import styles from './styles';
+import checker from './checker';
 
 const checkTheme = () => {
   let theme = localStorage.getItem('rff.io.theme');
-  if (theme) {
+  if (theme && checker.themeIsValid(theme)) {
     return {
       action: 'check',
       theme: theme,
@@ -20,19 +29,23 @@ const checkTheme = () => {
 };
 
 const setTheme = (theme) => {
-  switch (theme) {
-    case 'light': {
-      setLight();
-      break;
+  if (checker.themeIsValid(theme)) {
+    switch (theme) {
+      case 'light': {
+        setLight();
+        break;
+      }
+      case 'dark': {
+        setDark();
+        break;
+      }
+      default: {
+        setDark();
+        break;
+      }
     }
-    case 'dark': {
-      setDark();
-      break;
-    }
-    default: {
-      setDark();
-      break;
-    }
+  } else {
+    setDark();
   }
 };
 

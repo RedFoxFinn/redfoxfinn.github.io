@@ -1,3 +1,11 @@
+
+/*
+  Author:       RedFoxFinn - Antti Aarnio
+  Project:      RedFoxFinn.github.io
+  File:         ./src/tools/text.js
+  Description:  Text providing tool for project
+*/
+
 import packageInfo from '../../package.json';
 import content from '../data/text.json';
 import checker from './checker';

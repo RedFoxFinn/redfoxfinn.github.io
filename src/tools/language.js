@@ -1,7 +1,16 @@
 
+/*
+  Author:       RedFoxFinn - Antti Aarnio
+  Project:      RedFoxFinn.github.io
+  File:         ./src/tools/language.js
+  Description:  Tool that sets or gets language by using localStorage. Checks language validity with checker tools
+*/
+
+import checker from './checker';
+
 const checkLang = () => {
   const lang = localStorage.getItem('rff.io.lang');
-  if (lang) {
+  if (lang && checker.langIsValid(lang)) {
     return lang;
   } else {
     localStorage.setItem('rff.io.lang', 'en');
@@ -10,7 +19,7 @@ const checkLang = () => {
 };
 
 const setLang = (lang) => {
-  if (lang === 'en' || lang === 'fi') {
+  if (checker.langIsValid(lang)) {
     localStorage.setItem('rff.io.lang',lang);
     return {
       action: 'set',
@@ -19,7 +28,7 @@ const setLang = (lang) => {
     };
   } else {
     let setLang = localStorage.getItem('rff.io.lang');
-    if (!setLang) {
+    if (!setLang || !checker.langIsValid(setLang)) {
       localStorage.setItem('rff.io.lang', 'en');
       setLang = localStorage.getItem('rff.io.lang');
     }

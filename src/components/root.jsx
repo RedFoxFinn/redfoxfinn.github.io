@@ -1,4 +1,11 @@
 
+/*
+  Author:       RedFoxFinn - Antti Aarnio
+  Project:      RedFoxFinn.github.io
+  File:         ./src/components/root.jsx
+  Description:  Root component for app
+*/
+
 import React, {} from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import styles from '../tools/styles';

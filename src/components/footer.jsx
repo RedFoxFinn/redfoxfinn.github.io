@@ -1,4 +1,11 @@
 
+/*
+  Author:       RedFoxFinn - Antti Aarnio
+  Project:      RedFoxFinn.github.io
+  File:         ./src/components/footer.jsx
+  Description:  Component that provides footer element for the application
+*/
+
 import React from 'react';
 import styles from '../tools/styles';
 import text from '../tools/text';

@@ -1,4 +1,11 @@
 
+/*
+  Author:       RedFoxFinn - Antti Aarnio
+  Project:      RedFoxFinn.github.io
+  File:         ./src/components/navigator.jsx
+  Description:  Component that provides front page of the application
+*/
+
 import React, {} from 'react';
 
 import Text from './text';

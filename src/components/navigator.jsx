@@ -1,3 +1,11 @@
+
+/*
+  Author:       RedFoxFinn - Antti Aarnio
+  Project:      RedFoxFinn.github.io
+  File:         ./src/components/navigator.jsx
+  Description:  Component that provides navigational links for app
+*/
+
 import React, {} from 'react';
 import { Link } from 'react-router-dom';
 import language from '../tools/language';

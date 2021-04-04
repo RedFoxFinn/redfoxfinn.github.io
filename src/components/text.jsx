@@ -1,3 +1,11 @@
+
+/*
+  Author:       RedFoxFinn - Antti Aarnio
+  Project:      RedFoxFinn.github.io
+  File:         ./src/components/text.jsx
+  Description:  Component that provides text elements for the parent components
+*/
+
 import React from 'react';
 import styles from '../tools/styles';
 import text from '../tools/text';

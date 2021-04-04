@@ -1,9 +1,10 @@
 
-// Author:              Antti Aarnio || RedFoxFinn
-// Project:             RedFoxFinn.github.io
-// Description:         RedFoxFinn.github.io
-// File:                styles.js
-// File description:    styles is a self-made tool to provide inline styling for React components
+/*
+  Author:       RedFoxFinn - Antti Aarnio
+  Project:      RedFoxFinn.github.io
+  File:         ./src/tools/styles.js
+  Description:  Tool that provides inline styling for React components
+*/
 
 // Function definitions for styling tool
 
