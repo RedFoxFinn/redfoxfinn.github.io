@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](///compare/v0.3.0...v0.4.0) (2021-04-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* tool dependent functionalities
+
+### Features
+
+* added new tool: checker, refactoring and extending text, tests 47eb436
+
 ## [0.3.0](///compare/v0.2.3...v0.3.0) (2021-04-01)
 
 
