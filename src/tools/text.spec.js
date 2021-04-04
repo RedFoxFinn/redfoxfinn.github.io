@@ -131,3 +131,156 @@ describe('tool unit tests - text - content', () => {
     expect(home).toMatch(content.home.en.toString());
   });
 });
+
+describe('tool unit tests - text - themeSelector', () => {
+  let dummy = false;
+  it('dummy', () => {
+    expect(dummy).toBe(false);
+    dummy = true;
+    expect(dummy).toBe(true);
+  });
+  it('darkSelector - dark - en', () => {
+    const selectorText = text.themeSelectorDark('en', 'dark');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.dark.en}`);
+    expect(selectorText).toMatch(`${content.theme.theme.en}`);
+    expect(selectorText).toMatch(`${content.theme.selected.en}`);
+    expect(selectorText).toMatch(`${content.theme.dark.en} ${content.theme.theme.en} ${content.theme.selected.en}`);
+  });
+  it('darkSelector - dark - fi', () => {
+    const selectorText = text.themeSelectorDark('fi', 'dark');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.dark.fi}`);
+    expect(selectorText).toMatch(`${content.theme.theme.fi}`);
+    expect(selectorText).toMatch(`${content.theme.selected.fi}`);
+    expect(selectorText).toMatch(`${content.theme.dark.fi} ${content.theme.theme.fi} ${content.theme.selected.fi}`);
+  });
+  it('darkSelector - light - en', () => {
+    const selectorText = text.themeSelectorDark('en', 'light');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.dark.en}`);
+    expect(selectorText).toMatch(`${content.theme.theme.en}`);
+    expect(selectorText).not.toMatch(`${content.theme.selected.en}`);
+    expect(selectorText).toMatch(`${content.theme.dark.en} ${content.theme.theme.en}`);
+  });
+  it('darkSelector - light - fi', () => {
+    const selectorText = text.themeSelectorDark('fi', 'light');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.dark.fi}`);
+    expect(selectorText).toMatch(`${content.theme.theme.fi}`);
+    expect(selectorText).not.toMatch(`${content.theme.selected.fi}`);
+    expect(selectorText).toMatch(`${content.theme.dark.fi} ${content.theme.theme.fi}`);
+  });
+  it('darkSelector - dark - sv', () => {
+    const selectorText = text.themeSelectorDark('sv', 'dark');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.dark.en}`);
+    expect(selectorText).toMatch(`${content.theme.theme.en}`);
+    expect(selectorText).toMatch(`${content.theme.selected.en}`);
+    expect(selectorText).toMatch(`${content.theme.dark.en} ${content.theme.theme.en} ${content.theme.selected.en}`);
+  });
+  it('darkSelector - light - sv', () => {
+    const selectorText = text.themeSelectorDark('sv', 'light');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.dark.en}`);
+    expect(selectorText).toMatch(`${content.theme.theme.en}`);
+    expect(selectorText).not.toMatch(`${content.theme.selected.en}`);
+    expect(selectorText).toMatch(`${content.theme.dark.en} ${content.theme.theme.en}`);
+  });
+  it('darkSelector - green - en', () => {
+    const selectorText = text.themeSelectorDark('en', 'green');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.dark.en}`);
+    expect(selectorText).toMatch(`${content.theme.theme.en}`);
+    expect(selectorText).not.toMatch(`${content.theme.selected.en}`);
+    expect(selectorText).toMatch(`${content.theme.dark.en} ${content.theme.theme.en}`);
+  });
+  it('darkSelector - green - fi', () => {
+    const selectorText = text.themeSelectorDark('fi', 'green');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.dark.fi}`);
+    expect(selectorText).toMatch(`${content.theme.theme.fi}`);
+    expect(selectorText).not.toMatch(`${content.theme.selected.fi}`);
+    expect(selectorText).toMatch(`${content.theme.dark.fi} ${content.theme.theme.fi}`);
+  });
+  it('darkSelector - red - sv', () => {
+    const selectorText = text.themeSelectorDark('sv', 'red');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.dark.en}`);
+    expect(selectorText).toMatch(`${content.theme.theme.en}`);
+    expect(selectorText).not.toMatch(`${content.theme.selected.en}`);
+    expect(selectorText).toMatch(`${content.theme.dark.en} ${content.theme.theme.en}`);
+  });
+  it('lightSelector - dark - en', () => {
+    const selectorText = text.themeSelectorLight('en', 'dark');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.light.en}`);
+    expect(selectorText).toMatch(`${content.theme.theme.en}`);
+    expect(selectorText).not.toMatch(`${content.theme.selected.en}`);
+    expect(selectorText).toMatch(`${content.theme.light.en} ${content.theme.theme.en}`);
+  });
+  it('lightSelector - dark - fi', () => {
+    const selectorText = text.themeSelectorLight('fi', 'dark');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.light.fi}`);
+    expect(selectorText).toMatch(`${content.theme.theme.fi}`);
+    expect(selectorText).not.toMatch(`${content.theme.selected.fi}`);
+    expect(selectorText).toMatch(`${content.theme.light.fi} ${content.theme.theme.fi}`);
+  });
+  it('lightSelector - light - en', () => {
+    const selectorText = text.themeSelectorLight('en', 'light');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.light.en}`);
+    expect(selectorText).toMatch(`${content.theme.theme.en}`);
+    expect(selectorText).toMatch(`${content.theme.selected.en}`);
+    expect(selectorText).toMatch(`${content.theme.light.en} ${content.theme.theme.en} ${content.theme.selected.en}`);
+  });
+  it('lightSelector - light - fi', () => {
+    const selectorText = text.themeSelectorLight('fi', 'light');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.light.fi}`);
+    expect(selectorText).toMatch(`${content.theme.theme.fi}`);
+    expect(selectorText).toMatch(`${content.theme.selected.fi}`);
+    expect(selectorText).toMatch(`${content.theme.light.fi} ${content.theme.theme.fi} ${content.theme.selected.fi}`);
+  });
+  it('lightSelector - dark - sv', () => {
+    const selectorText = text.themeSelectorLight('sv', 'dark');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.light.en}`);
+    expect(selectorText).toMatch(`${content.theme.theme.en}`);
+    expect(selectorText).not.toMatch(`${content.theme.selected.en}`);
+    expect(selectorText).toMatch(`${content.theme.light.en} ${content.theme.theme.en}`);
+  });
+  it('lightSelector - light - sv', () => {
+    const selectorText = text.themeSelectorLight('sv', 'light');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.light.en}`);
+    expect(selectorText).toMatch(`${content.theme.theme.en}`);
+    expect(selectorText).toMatch(`${content.theme.selected.en}`);
+    expect(selectorText).toMatch(`${content.theme.light.en} ${content.theme.theme.en} ${content.theme.selected.en}`);
+  });
+  it('lightSelector - green - en', () => {
+    const selectorText = text.themeSelectorLight('en', 'green');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.light.en}`);
+    expect(selectorText).toMatch(`${content.theme.theme.en}`);
+    expect(selectorText).not.toMatch(`${content.theme.selected.en}`);
+    expect(selectorText).toMatch(`${content.theme.light.en} ${content.theme.theme.en}`);
+  });
+  it('lightSelector - green - fi', () => {
+    const selectorText = text.themeSelectorLight('fi', 'green');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.light.fi}`);
+    expect(selectorText).toMatch(`${content.theme.theme.fi}`);
+    expect(selectorText).not.toMatch(`${content.theme.selected.fi}`);
+    expect(selectorText).toMatch(`${content.theme.light.fi} ${content.theme.theme.fi}`);
+  });
+  it('lightSelector - red - sv', () => {
+    const selectorText = text.themeSelectorLight('sv', 'red');
+    expect(selectorText).toBeTruthy();
+    expect(selectorText).toMatch(`${content.theme.light.en}`);
+    expect(selectorText).toMatch(`${content.theme.theme.en}`);
+    expect(selectorText).not.toMatch(`${content.theme.selected.en}`);
+    expect(selectorText).toMatch(`${content.theme.light.en} ${content.theme.theme.en}`);
+  });
+});
