@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.2](///compare/v0.4.1...v0.4.2) (2021-04-04)
+
+
+### Features
+
+* refactoring idGen, text.jsx 32bd6b1
+
 ### [0.4.1](///compare/v0.4.0...v0.4.1) (2021-04-04)
 
 ## [0.4.0](///compare/v0.3.0...v0.4.0) (2021-04-04)
