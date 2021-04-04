@@ -12,13 +12,13 @@ import text from '../tools/text';
 
 const ShortText = (props) => {
   return <section id={`${props.id}`} data-testid={`${props.id}`}>
-    <p id={`${props.id}.text`} data-testid={`${props.id}.text`}>ShortText</p>
+    <p id={`${props.id}.content`} data-testid={`${props.id}.content`}>ShortText</p>
   </section>;
 };
 
 const LongText = (props) => {
   return <section id={`${props.id}`} data-testid={`${props.id}`}>
-    <p id={`${props.id}.text`} data-testid={`${props.id}.text`} style={{width: '6em'}}>{`LongText  LongText`}</p>
+    {props.texts.map(text => <p id={`${props.id}.content${props.texts.indexOf(text)}`}>{text}</p>)}
   </section>;
 };
 

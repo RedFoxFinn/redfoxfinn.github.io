@@ -6,7 +6,7 @@
   Description:  Tool that generates id's for the components or elements using parent id
 */
 
-const idGen = (parentId, idFor) => {
+const idGen = (parentId, idFor, ...rest) => {
   switch (idFor) {
     case 'app': return `${parentId}.app`;
     case 'header': return `${parentId}.app.header`;
@@ -20,9 +20,9 @@ const idGen = (parentId, idFor) => {
     case 'navCV': return `${parentId}.navCV`;
     case 'navAbout': return `${parentId}.navAbout`;
     case 'navLinks': return `${parentId}.navLinks`;
-    case 'text': return `${parentId}.text`;
-    case 'shortText': return `${parentId}.shortText`;
-    case 'longText': return `${parentId}.longText`;
+    case 'text': return `${parentId}.text.${rest[0]}`;
+    case 'shortText': return `${parentId}.shortText.${rest[0]}`;
+    case 'longText': return `${parentId}.longText.${rest[0]}`;
     default: return `${parentId}.default`;
   }
 };

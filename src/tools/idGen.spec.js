@@ -75,18 +75,18 @@ describe('tool unit tests - idGen', () => {
     expect(gen).toMatch(`${appId}.navAbout`);
   });
   it('text', () => {
-    const gen = idGen(`${appId}`, 'text');
+    const gen = idGen(`${appId}`, 'text', 1);
     expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.text`);
+    expect(gen).toMatch(`${appId}.text.1`);
   });
   it('shortText', () => {
-    const gen = idGen(`${appId}`, 'shortText');
+    const gen = idGen(`${appId}`, 'shortText', 2);
     expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.shortText`);
+    expect(gen).toMatch(`${appId}.shortText.2`);
   });
   it('longText', () => {
-    const gen = idGen(`${appId}`, 'longText');
+    const gen = idGen(`${appId}`, 'longText', 3);
     expect(gen).toBeTruthy();
-    expect(gen).toMatch(`${appId}.longText`);
+    expect(gen).toMatch(`${appId}.longText.3`);
   });
 });
