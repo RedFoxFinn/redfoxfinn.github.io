@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.0](///compare/v0.6.0...v0.7.0) (2021-04-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* **internal dependecies:** internal dependecies on Text.jsx added
+
+* **internal dependecies:** links.jsx & cv.jsx now rely on Text.HeaderText on page headers 5c413b8
+
 ## [0.6.0](///compare/v0.5.1...v0.6.0) (2021-04-06)
 
 
