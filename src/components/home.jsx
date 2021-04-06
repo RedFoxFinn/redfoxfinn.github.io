@@ -11,6 +11,14 @@ import React, {} from 'react';
 import Text from './text';
 import idGen from '../tools/idGen';
 
+/*
+  Function name:      Home
+  Function type:      React functional component
+  Desctiption:        Home returns home page as component for rendering
+  Parameters:         Home takes and uses following props (parameters):
+                      id | generated component id
+*/
+
 const Home = (props) => {
   return <section id={`${props.id}`} data-testid={`${props.id}`} style={{margin: '1em'}}>
     HOME!
