@@ -6,6 +6,8 @@
 */
 
 import React from 'react';
+import Text from './text';
+import idGen from '../tools/idGen';
 
 /*
   Function name:      Links
@@ -17,7 +19,9 @@ import React from 'react';
 */
 
 const Links = (props) => {
-  return <section id={`${props.id}`} data-testid={`${props.id}`} style={{margin: '1em'}}>Links</section>
+  return <section id={`${props.id}`} data-testid={`${props.id}`} style={{margin: '1em'}}>
+    <Text.HeaderText id={idGen(`${props.id}`, 'headerText')} content={'Link list'}/>
+  </section>
 };
 
 export default Links;

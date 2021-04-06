@@ -7,6 +7,8 @@
 */
 
 import React, {} from 'react';
+import Text from './text';
+import idGen from '../tools/idGen';
 
 /*
   Function name:      CV
@@ -19,7 +21,7 @@ import React, {} from 'react';
 
 const CV = (props) => {
   return <section id={`${props.id}`} data-testid={`${props.id}`} style={{margin: '1em'}}>
-    CV
+    <Text.HeaderText id={idGen(`${props.id}`, 'headerText')} content={'CV'}/>
   </section>;
 };
 

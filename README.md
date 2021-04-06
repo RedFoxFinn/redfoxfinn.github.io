@@ -18,4 +18,3 @@ Portfolio page for github pages built with React, React Router and inline styles
 - styles (get inline styles for components)
 - text (provides texts for components with language options)
 - theme (theme switcher)
-- weekday (another text tool for weekday texts)
