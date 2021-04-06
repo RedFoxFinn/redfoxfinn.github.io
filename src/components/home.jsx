@@ -12,6 +12,7 @@ import Text from './text';
 import idGen from '../tools/idGen';
 import text from '../tools/text';
 import language from '../tools/language';
+import styles from '../tools/styles';
 
 /*
   Function name:      generateTextContent
@@ -48,7 +49,7 @@ const generateTextContent = (id) => {
 */
 
 const Home = (props) => {
-  return <section id={`${props.id}`} data-testid={`${props.id}`} style={{margin: '1em'}}>
+  return <section id={`${props.id}`} data-testid={`${props.id}`} style={styles.componentMaster()}>
     {generateTextContent(props.id)}
   </section>;
 }

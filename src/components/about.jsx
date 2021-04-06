@@ -12,6 +12,7 @@ import Text from './text';
 import idGen from '../tools/idGen';
 import text from '../tools/text';
 import language from '../tools/language';
+import styles from '../tools/styles';
 
 let texts;
 
@@ -65,7 +66,7 @@ const generateSoftwareTools = (id) => {
 const About = (props) => {
   const lang = language.checkLang();
   texts = text.about(lang);
-  return <section id={`${props.id}`} data-testid={`${props.id}`} style={{margin: '1em'}}>
+  return <section id={`${props.id}`} data-testid={`${props.id}`} style={styles.componentMaster()}>
     <Text.HeaderText id={idGen(`${props.id}`, 'headerText')} content={texts[0]}/>
     {generateFrameworksLibraries(props.id)}
     {generateSoftwareTools(props.id)}

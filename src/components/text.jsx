@@ -9,7 +9,6 @@
 
 import React from 'react';
 import styles from '../tools/styles';
-import text from '../tools/text';
 
 /*
   Function name:      ShortText
@@ -22,7 +21,7 @@ import text from '../tools/text';
 
 const ShortText = (props) => {
   return <section id={`${props.id}`} data-testid={`${props.id}`}>
-    <p id={`${props.id}.content`} data-testid={`${props.id}.content`} style={{maxWidth: '24em'}}>{props.content}</p>
+    <p id={`${props.id}.content`} data-testid={`${props.id}.content`} style={styles.textM()}>{props.content}</p>
   </section>;
 };
 
@@ -36,8 +35,8 @@ const ShortText = (props) => {
 */
 
 const LongText = (props) => {
-  return <section id={`${props.id}`} data-testid={`${props.id}`} style={{maxWidth: '24em'}}>
-    <p id={`${props.id}.content`} data-testid={`${props.id}.content`}>{props.content}</p>
+  return <section id={`${props.id}`} data-testid={`${props.id}`}>
+    <p id={`${props.id}.content`} data-testid={`${props.id}.content`} style={styles.textM()}>{props.content}</p>
   </section>;
 };
 
@@ -52,7 +51,7 @@ const LongText = (props) => {
 
 const HeaderText = (props) => {
   return <section id={`${props.id}`} data-testid={`${props.id}`}>
-    <p id={`${props.id}.content`} data-testid={`${props.id}.content`} style={{maxWidth: '24em'}}>{props.content}</p>
+    <p id={`${props.id}.content`} data-testid={`${props.id}.content`} style={styles.textL()}>{props.content}</p>
   </section>;
 };
 
@@ -62,8 +61,15 @@ const DetailText = (props) => {
   const generateDetailsContentId = (index) => `${props.id}.details.content.${index}`;
   return <section id={`${props.id}`} data-testid={`${props.id}`}>
     <details id={generateDetailsId()}>
-      <summary id={generateSummaryId()}>{props.content.name}</summary>
-      {props.content.with.map(ext => <p id={generateDetailsContentId(props.content.with.indexOf(ext))} key={generateDetailsContentId(props.content.with.indexOf(ext))}>{ext.name}</p>)}
+      <summary
+        id={generateSummaryId()}
+        style={props.overrideSummaryStyle ? props.style : styles.textM()}>{props.content.name}</summary>
+      {props.content.with.map(ext => <p
+        id={generateDetailsContentId(props.content.with.indexOf(ext))}
+        key={generateDetailsContentId(props.content.with.indexOf(ext))}
+        style={props.overrideDetailStyle ? props.style : styles.textM()}>
+          {ext.name}
+        </p>)}
     </details>
   </section>;
 };

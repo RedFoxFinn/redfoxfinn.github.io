@@ -143,31 +143,26 @@ const header_second = () => {
     };
 };
 
-const tech_first = () => {
-    return {
-        fontSize: '1.5em',
-        color: 'black'
-    };
-};
-
-const tech_second = () => {
+const textS = () => {
     return {
         fontSize: '0.75em',
         color: 'grey'
     };
 };
 
-const text = () => {
+const textM = () => {
     return {
         fontSize: '1em', 
-        color: 'black'
+        color: 'black',
+        maxWidth: '24em'
     };
 };
 
-const larger_text = () => {
+const textL = () => {
     return {
-        fontSize: '1.5em', 
-        color: 'black'
+        fontSize: '1.25em', 
+        color: 'black',
+        maxWidth: '24em'
     };
 };
 
@@ -175,27 +170,6 @@ const success = () => {
     return {
         fontSize: '1em', 
         color: 'forestgreen'
-    };
-};
-
-const failure = () => {
-    return {
-        fontSize: '1em', 
-        color: '#dc4233'
-    };
-};
-
-const running = () => {
-    return {
-        fontSize: '1em', 
-        color: 'darkblue'
-    };
-};
-
-const selection = () => {
-    return {
-        fontSize: '1.5em', 
-        color: '#dc4233'
     };
 };
 
@@ -210,43 +184,21 @@ const sortingButton = () => {
     };
 };
 
-const fetchingButton = () => {
-    return {
-        marginLeft: '1em', 
-        width: '6em', 
-        height: '2em', 
-        outline: '1px solid #dc4233', 
-        border: '1px solid transparent', 
-        background: 'transparent'
-    };
-};
-
-const searchButtons = () => {
-    return {
-        marginLeft: '1em', 
-        width: '8em', 
-        height: '2em', 
-        outline: '1px solid #dc4233', 
-        border: '1px solid transparent', 
-        background: 'transparent'
-    };
-};
-
-const searchField = () => {
-    return {
-        width: '12em', 
-        height: '1em', 
-        outline: '1px solid #dc4233', 
-        border: '1px solid transparent', 
-        background: 'transparent'
-    };
-};
-
 const body = (selection) => {
     return selection === 'light' ? {
         backgroundImage: 'linear-gradient(-45deg, #ffffff, #ff8c00)',
     } : {
         backgroundImage: 'linear-gradient(-45deg, #000000, #696969, #ff8c00)',
+    };
+};
+
+const componentMaster = () => {
+    return {
+        display: 'flex',
+        flexDirection: 'column',
+        alignContent: 'center',
+        alignItems: 'center',
+        margin: '1em'
     };
 };
 
@@ -262,7 +214,7 @@ const rootElement = () => {
 //   styling tool exporting
 
 export default {
-    body, header_first, header_second, failure, fetchingButton, row, column, infoRow, header_optional, header_dateTime,
-    running, searchButtons, searchField, selection, sortingButton, sortings, success, text, larger_text,
-    footer_first, footer_second, footer_third, tech_first, tech_second, rootElement
+    body, header_first, header_second, row, column, infoRow, header_optional, header_dateTime,
+    sortingButton, sortings, success, textM, textL,
+    footer_first, footer_second, footer_third, textS, rootElement, componentMaster
 };
