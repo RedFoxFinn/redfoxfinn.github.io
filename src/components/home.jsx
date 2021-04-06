@@ -27,16 +27,16 @@ import language from '../tools/language';
 const generateTextContent = (id) => {
   const lang = language.checkLang();
   const texts = text.home(lang);
-  const long = texts.filter(content => content.length >= 36);
-  const short = texts.filter(content => content.length < 36);
   return <Fragment>
-    {short.map(content => {
-      const genId = idGen(`${id}`,'shortText',short.indexOf(content));
-      return <Text.ShortText id={genId} key={genId} content={content}/>;
-    })}
-    {long.map(content => {
-      const genId = idGen(`${id}`, 'longText',long.indexOf(content));
-      return <Text.LongText id={genId} key={genId} content={content}/>;
+    {texts.map(content => {
+      let genId;
+      content.length >= 36
+        ? genId = idGen(`${id}`,'longText',texts.indexOf(content))
+        : genId = idGen(`${id}`,'shortText',texts.indexOf(content));
+
+      return content.length >= 36
+        ? <Text.LongText id={genId} key={genId} content={content}/>
+        : <Text.ShortText id={genId} key={genId} content={content}/>;
     })}
   </Fragment>
 };
