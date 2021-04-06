@@ -116,19 +116,19 @@ describe('tool unit tests - text - content', () => {
   });
   it('home - default', () => {
     const home = text.home();
-    expect(home).toMatch(content.home.en.toString());
+    expect(home[0]).toMatch(content.home.en[0].toString());
   });
   it('home - fi', () => {
     const home = text.home('fi');
-    expect(home).toMatch(content.home.fi.toString());
+    expect(home[1]).toMatch(content.home.fi[1].toString());
   });
   it('home - en', () => {
     const home = text.home('en');
-    expect(home).toMatch(content.home.en.toString());
+    expect(home[2]).toMatch(content.home.en[2].toString());
   });
   it('home - unknown', () => {
     const home = text.home(`${randomLang}`);
-    expect(home).toMatch(content.home.en.toString());
+    expect(home[0]).toMatch(content.home.en[0].toString());
   });
 });
 

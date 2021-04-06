@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 
 /*
   Author:       RedFoxFinn - Antti Aarnio
@@ -28,7 +29,7 @@ const appId = () => {
 
 const home = (lang) => {
   const langIsValid = checker.langIsValid(lang);
-  return langIsValid && lang === 'fi' ? content.home.fi.toString() : content.home.en.toString();
+  return langIsValid && lang === 'fi' ? content.home.fi : content.home.en;
 };
 
 const navHome = (lang) => {

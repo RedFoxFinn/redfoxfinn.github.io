@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 
 /*
   Author:       RedFoxFinn - Antti Aarnio
@@ -15,12 +16,13 @@ import text from '../tools/text';
   Function type:      React functional component
   Desctiption:        ShortText returns short text content as component for rendering
   Parameters:         ShortText takes and uses following props (parameters):
-                      id | generated component id
+                      id        | generated component id
+                      content   | text content to render
 */
 
 const ShortText = (props) => {
-  return <section id={`${props.id}`} data-testid={`${props.id}`}>
-    <p id={`${props.id}.content`} data-testid={`${props.id}.content`}>ShortText</p>
+  return <section id={`${props.id}`} data-testid={`${props.id}`} style={{maxWidth: '24em'}}>
+    <p id={`${props.id}.content`} data-testid={`${props.id}.content`}>{props.content}</p>
   </section>;
 };
 
@@ -29,13 +31,13 @@ const ShortText = (props) => {
   Function type:      React functional component
   Desctiption:        LongText returns longer, multiline, text content as component for rendering
   Parameters:         LongerText takes and uses following props (parameters):
-                      id    | generated component id
-                      texts | provided texts to render as component content
+                      id        | generated component id
+                      content     | text content to render
 */
 
 const LongText = (props) => {
-  return <section id={`${props.id}`} data-testid={`${props.id}`}>
-    {props.texts.map(text => <p id={`${props.id}.content${props.texts.indexOf(text)}`}>{text}</p>)}
+  return <section id={`${props.id}`} data-testid={`${props.id}`} style={{maxWidth: '24em'}}>
+    <p id={`${props.id}.content`} data-testid={`${props.id}.content`}>{props.content}</p>
   </section>;
 };
 
