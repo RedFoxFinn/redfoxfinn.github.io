@@ -4,7 +4,7 @@
   "name": "redfoxfinn_io",
   "appName": "RedFoxFinn.github.io",
   "appId": "rff.dev.gh.io",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "private": true,
   "development_software": [
     {
