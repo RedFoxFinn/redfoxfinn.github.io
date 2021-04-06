@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](///compare/v0.5.1...v0.6.0) (2021-04-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* new functionalities and components replacing & complimenting existing ones
+
+### Features
+
+* about.jsx content generators added, home.jsx content generator added, etc 3b34a3f
+
 ### [0.5.1](///compare/v0.5.0...v0.5.1) (2021-04-06)
 
 ## [0.5.0](///compare/v0.4.3...v0.5.0) (2021-04-06)
