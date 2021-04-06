@@ -89,4 +89,14 @@ describe('tool unit tests - idGen', () => {
     expect(gen).toBeTruthy();
     expect(gen).toMatch(`${appId}.longText.3`);
   });
+  it('headerText', () => {
+    const gen = idGen(`${appId}`, 'headerText');
+    expect(gen).toBeTruthy();
+    expect(gen).toMatch(`${appId}.headerText`);
+  });
+  it('detailText', () => {
+    const gen = idGen(`${appId}`, 'detailText', 4);
+    expect(gen).toBeTruthy();
+    expect(gen).toMatch(`${appId}.detailText.4`);
+  });
 });

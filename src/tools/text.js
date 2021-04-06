@@ -27,6 +27,11 @@ const appId = () => {
   return packageInfo.appId.toString();
 };
 
+const about = (lang) => {
+  const langIsValid = checker.langIsValid(lang);
+  return langIsValid && lang === 'fi' ? content.about.fi : content.about.en;
+};
+
 const home = (lang) => {
   const langIsValid = checker.langIsValid(lang);
   return langIsValid && lang === 'fi' ? content.home.fi : content.home.en;
@@ -108,9 +113,13 @@ const themeSelectorLight = (lang, current) => {
   return text;
 };
 
+const devSoftware = () => {
+  return packageInfo.development_software;
+};
+
 export default {
   author, version, appId, appName,
-  home,
+  about, home, devSoftware,
   navHome, navAbout, navCV, navLinks,
   themeSelectorDark, themeSelectorLight
 };

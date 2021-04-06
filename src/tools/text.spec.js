@@ -32,6 +32,10 @@ describe('tool unit tests - text - info', () => {
     expect(appName).toBeTruthy();
     expect(appName).toMatch(packageInfo.appName);
   });
+  it('devSoftware', () => {
+    const devSoft = text.devSoftware();
+    expect(devSoft[0].name).toMatch(packageInfo.development_software[0].name.toString());
+  });
 });
 
 describe('tool unit tests - text - navigation', () => {
@@ -129,6 +133,22 @@ describe('tool unit tests - text - content', () => {
   it('home - unknown', () => {
     const home = text.home(`${randomLang}`);
     expect(home[0]).toMatch(content.home.en[0].toString());
+  });
+  it('about - default', () => {
+    const about = text.about();
+    expect(about[0]).toMatch(content.about.en[0].toString());
+  });
+  it('about - fi', () => {
+    const about = text.about('fi');
+    expect(about[1]).toMatch(content.about.fi[1].toString());
+  });
+  it('about - en', () => {
+    const about = text.about('en');
+    expect(about[2]).toMatch(content.about.en[2].toString());
+  });
+  it('about - unknown', () => {
+    const about = text.about(`${randomLang}`);
+    expect(about[0]).toMatch(content.about.en[0].toString());
   });
 });
 

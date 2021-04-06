@@ -23,6 +23,8 @@ const idGen = (parentId, idFor, ...rest) => {
     case 'text': return `${parentId}.text.${rest[0]}`;
     case 'shortText': return `${parentId}.shortText.${rest[0]}`;
     case 'longText': return `${parentId}.longText.${rest[0]}`;
+    case 'headerText': return `${parentId}.headerText`;
+    case 'detailText': return `${parentId}.detailText.${rest[0]}`;
     default: return `${parentId}.default`;
   }
 };

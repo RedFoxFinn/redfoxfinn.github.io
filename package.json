@@ -6,6 +6,45 @@
   "appId": "rff.dev.gh.io",
   "version": "0.5.1",
   "private": true,
+  "development_software": [
+    {
+      "name": "Visual Studio Code",
+      "with": [
+        {
+          "name": "Remote Development"
+        },
+        {
+          "name": "Remote - SSH"
+        },
+        {
+          "name": "ESLint"
+        },
+        {
+          "name": "Rainbow Brackets"
+        },
+        {
+          "name": "Auto Rename Tag"
+        }
+      ]
+    },
+    {
+      "name": "Yarn package manager"
+    },
+    {
+      "name": "npm"
+    },
+    {
+      "name": "Google Chrome",
+      "with": [
+        {
+          "name": "React Developer Tools"
+        },
+        {
+          "name": "Redux DevTools"
+        }
+      ]
+    }
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

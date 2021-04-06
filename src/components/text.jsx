@@ -21,8 +21,8 @@ import text from '../tools/text';
 */
 
 const ShortText = (props) => {
-  return <section id={`${props.id}`} data-testid={`${props.id}`} style={{maxWidth: '24em'}}>
-    <p id={`${props.id}.content`} data-testid={`${props.id}.content`}>{props.content}</p>
+  return <section id={`${props.id}`} data-testid={`${props.id}`}>
+    <p id={`${props.id}.content`} data-testid={`${props.id}.content`} style={{maxWidth: '24em'}}>{props.content}</p>
   </section>;
 };
 
@@ -32,7 +32,7 @@ const ShortText = (props) => {
   Desctiption:        LongText returns longer, multiline, text content as component for rendering
   Parameters:         LongerText takes and uses following props (parameters):
                       id        | generated component id
-                      content     | text content to render
+                      content   | text content to render
 */
 
 const LongText = (props) => {
@@ -41,4 +41,31 @@ const LongText = (props) => {
   </section>;
 };
 
-export default {ShortText, LongText};
+/*
+  Function name:      HeaderText
+  Function type:      React functional component
+  Desctiption:        HeaderText returns short text content as component for rendering
+  Parameters:         HeaderText takes and uses following props (parameters):
+                      id        | generated component id
+                      content   | text content to render
+*/
+
+const HeaderText = (props) => {
+  return <section id={`${props.id}`} data-testid={`${props.id}`}>
+    <p id={`${props.id}.content`} data-testid={`${props.id}.content`} style={{maxWidth: '24em'}}>{props.content}</p>
+  </section>;
+};
+
+const DetailText = (props) => {
+  const generateDetailsId = () => `${props.id}.details`;
+  const generateSummaryId = () => `${props.id}.details.summary`;
+  const generateDetailsContentId = (index) => `${props.id}.details.content.${index}`;
+  return <section id={`${props.id}`} data-testid={`${props.id}`}>
+    <details id={generateDetailsId()}>
+      <summary id={generateSummaryId()}>{props.content.name}</summary>
+      {props.content.with.map(ext => <p id={generateDetailsContentId(props.content.with.indexOf(ext))} key={generateDetailsContentId(props.content.with.indexOf(ext))}>{ext.name}</p>)}
+    </details>
+  </section>;
+};
+
+export default {ShortText, LongText, HeaderText, DetailText};

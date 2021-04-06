@@ -18,8 +18,6 @@ import language from '../tools/language';
   Function type:      arrow function / helper
   Description:        generateTextContent returns home page text content
                       wrapped inside React Fragment
-                      Fragment is a component which won't be rendered or 
-                      doesn't show on 
   Parameters:         lang  | language selection
                       id    | parent component id
 */
