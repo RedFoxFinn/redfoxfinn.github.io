@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -113,9 +113,7 @@
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -143,16 +141,16 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,14 +183,13 @@ import Text from './text';
 import idGen from '../tools/idGen';
 import text from '../tools/text';
 import language from '../tools/language';
+import styles from '../tools/styles';
 &nbsp;
 /*
   Function name:      generateTextContent
   Function type:      arrow function / helper
   Description:        generateTextContent returns home page text content
                       wrapped inside React Fragment
-                      Fragment is a component which won't be rendered or 
-                      doesn't show on 
   Parameters:         lang  | language selection
                       id    | parent component id
 */
@@ -200,16 +197,16 @@ import language from '../tools/language';
 const generateTextContent = (id) =&gt; {
   const lang = language.checkLang();
   const texts = text.home(lang);
-  const long = texts.filter(content =&gt; content.length &gt;= 36);
-  const short = texts.filter(content =&gt; content.length &lt; 36);
   return &lt;Fragment&gt;
-    {short.map(content =&gt; {
-      const genId = idGen(`${id}`,'shortText',short.indexOf(content));
-      return &lt;Text.ShortText id={genId} key={genId} content={content}/&gt;;
-    })}
-    {long.map(content =&gt; {
-      const genId = idGen(`${id}`, 'longText',long.indexOf(content));
-      return &lt;Text.LongText id={genId} key={genId} content={content}/&gt;;
+    {texts.map(content =&gt; {
+      let genId;
+      content.length &gt;= 36
+        ? genId = idGen(`${id}`,'longText',texts.indexOf(content))
+        : genId = idGen(`${id}`,'shortText',texts.indexOf(content));
+&nbsp;
+      return content.length &gt;= 36
+        ? &lt;Text.LongText id={genId} key={genId} content={content} altStyle={true}/&gt;
+        : &lt;Text.ShortText id={genId} key={genId} content={content} altStyle={true}/&gt;;
     })}
   &lt;/Fragment&gt;
 };
@@ -223,7 +220,7 @@ const generateTextContent = (id) =&gt; {
 */
 &nbsp;
 const Home = (props) =&gt; {
-  return &lt;section id={`${props.id}`} data-testid={`${props.id}`} style={{margin: '1em'}}&gt;
+  return &lt;section id={`${props.id}`} data-testid={`${props.id}`} style={styles.componentMaster()}&gt;
     {generateTextContent(props.id)}
   &lt;/section&gt;;
 }
@@ -235,7 +232,7 @@ export default Home;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Apr 06 2021 12:05:25 GMT+0300 (Eastern European Summer Time)
+                at Wed Apr 07 2021 11:44:45 GMT+0300 (Eastern European Summer Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

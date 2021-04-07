@@ -26,7 +26,10 @@ let texts;
 */
 
 const generateFrameworksLibraries = (id) => {
+  const devPackages = text.devPackages();
+  const packages = text.packages();
   return <Fragment>
+    <Text.HeaderText id={idGen(`${id}`, 'headerText')} content={texts[1]}/>
   </Fragment>;
 };
 
@@ -42,6 +45,7 @@ const generateFrameworksLibraries = (id) => {
 const generateSoftwareTools = (id) => {
   const softTools = text.devSoftware();
   return <Fragment>
+    <Text.HeaderText id={idGen(`${id}`, 'headerText')} content={texts[2]} />
     {softTools.map(softTool => {
       let genId;
       softTool?.with

@@ -21,7 +21,8 @@ import styles from '../tools/styles';
 
 const ShortText = (props) => {
   return <section id={`${props.id}`} data-testid={`${props.id}`}>
-    <p id={`${props.id}.content`} data-testid={`${props.id}.content`} style={styles.textM()}>{props.content}</p>
+    <p id={`${props.id}.content`} data-testid={`${props.id}.content`}
+      style={props.altStyle ? styles.textL() : styles.textM()}>{props.content}</p>
   </section>;
 };
 
@@ -36,7 +37,8 @@ const ShortText = (props) => {
 
 const LongText = (props) => {
   return <section id={`${props.id}`} data-testid={`${props.id}`}>
-    <p id={`${props.id}.content`} data-testid={`${props.id}.content`} style={styles.textM()}>{props.content}</p>
+    <p id={`${props.id}.content`} data-testid={`${props.id}.content`}
+      style={props.altStyle ? styles.textL() : styles.textM()}>{props.content}</p>
   </section>;
 };
 
@@ -55,6 +57,18 @@ const HeaderText = (props) => {
   </section>;
 };
 
+/*
+  Function name:      DetailText
+  Function type:      React functional component
+  Desctiption:        DetailText returns text content wrapped inside of <details>
+                      as a component for rendering
+  Parameters:         DetailText takes and uses following props (parameters):
+                      id        | generated component id
+                      content   | text content to render
+                      altSummaryStyle
+                      altDetailStyle
+*/
+
 const DetailText = (props) => {
   const generateDetailsId = () => `${props.id}.details`;
   const generateSummaryId = () => `${props.id}.details.summary`;
@@ -63,15 +77,34 @@ const DetailText = (props) => {
     <details id={generateDetailsId()}>
       <summary
         id={generateSummaryId()}
-        style={props.overrideSummaryStyle ? props.style : styles.textM()}>{props.content.name}</summary>
+        style={props.altSummaryStyle ? styles.textL() : styles.textM()}>{props.content.name}</summary>
       {props.content.with.map(ext => <p
         id={generateDetailsContentId(props.content.with.indexOf(ext))}
         key={generateDetailsContentId(props.content.with.indexOf(ext))}
-        style={props.overrideDetailStyle ? props.style : styles.textM()}>
+        style={props.altDetailStyle ? styles.textL() : styles.textM()}>
           {ext.name}
         </p>)}
     </details>
   </section>;
 };
 
-export default {ShortText, LongText, HeaderText, DetailText};
+/*
+  Function name:      PackageText
+  Function type:      React functional component
+  Desctiption:        PackageText returns text content wrapped inside of <details>
+                      as a component for rendering
+  Parameters:         PackageText takes and uses following props (parameters):
+                      id        | generated component id
+                      content   | text content to render
+                      altStyle  | 
+                      dev       | boolean, effect on style
+*/
+
+const PackageText = (props) => {
+  return <section id={`${props.id}`} data-testid={`${props.id}`}>
+    <p id={`${props.id}.content`} data-testid={`${props.id}.content`}
+      style={props.altStyle ? styles.textL() : styles.textM()}>{props.content}</p>
+  </section>;
+};
+
+export default {ShortText, LongText, HeaderText, DetailText, PackageText};

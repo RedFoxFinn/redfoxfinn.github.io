@@ -36,6 +36,20 @@ describe('tool unit tests - text - info', () => {
     const devSoft = text.devSoftware();
     expect(devSoft[0].name).toMatch(packageInfo.development_software[0].name.toString());
   });
+  it('packages', () => {
+    const packages = text.packages();
+    const entries = Object.entries(packageInfo.dependencies);
+    expect(packages).toBeTruthy();
+    expect(packages[0]).toBeTruthy()
+    expect(packages[0]).toMatchObject(entries[0]);
+  });
+  it('devPackages', () => {
+    const devPackages = text.devPackages();
+    const entries = Object.entries(packageInfo.devDependencies);
+    expect(devPackages).toBeTruthy();
+    expect(devPackages).toBeTruthy();
+    expect(devPackages[0]).toMatchObject(entries[0]);
+  });
 });
 
 describe('tool unit tests - text - navigation', () => {

@@ -34,8 +34,8 @@ const generateTextContent = (id) => {
         : genId = idGen(`${id}`,'shortText',texts.indexOf(content));
 
       return content.length >= 36
-        ? <Text.LongText id={genId} key={genId} content={content}/>
-        : <Text.ShortText id={genId} key={genId} content={content}/>;
+        ? <Text.LongText id={genId} key={genId} content={content} altStyle={true}/>
+        : <Text.ShortText id={genId} key={genId} content={content} altStyle={true}/>;
     })}
   </Fragment>
 };

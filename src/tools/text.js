@@ -117,9 +117,17 @@ const devSoftware = () => {
   return packageInfo.development_software;
 };
 
+const devPackages = () => {
+  return Object.entries(packageInfo.devDependencies);
+};
+
+const packages = () => {
+  return Object.entries(packageInfo.dependencies);
+};
+
 export default {
   author, version, appId, appName,
-  about, home, devSoftware,
+  about, home, devSoftware, packages, devPackages,
   navHome, navAbout, navCV, navLinks,
   themeSelectorDark, themeSelectorLight
 };
