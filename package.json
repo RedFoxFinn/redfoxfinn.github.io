@@ -1,6 +1,10 @@
 {
   "author": "RedFoxFinn",
   "homepage": "https://RedFoxFinn.github.io/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RedFoxFinn/RedFoxFinn.github.io.git"
+  },
   "name": "redfoxfinn_io",
   "appName": "RedFoxFinn.github.io",
   "appId": "rff.dev.gh.io",
@@ -67,7 +71,7 @@
     "cm": "git-cz",
     "release": "standard-version",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": [
