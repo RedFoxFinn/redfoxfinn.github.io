@@ -17,6 +17,12 @@ import Header from './header';
 import Footer from './footer';
 import Navigator from './navigator';
 import idGen from '../tools/idGen';
+import theme from '../tools/theme';
+
+const setAppBody = () => {
+  document.getElementById('root').style.backgroundImage = styles.body(theme.checkTheme().theme).backgroundImage;
+  document.getElementById('root').style.height = window.innerHeight;
+};
 
 /*
   Function name:      Root
@@ -29,6 +35,7 @@ import idGen from '../tools/idGen';
 */
 
 const Root = (props) => {
+  setAppBody();
   return <HashRouter id={`${props.id}`}>
     <article id={idGen(`${props.id}`, 'app')} data-testid={idGen(`${props.id}`, 'app')} style={styles.rootElement()}>
       <Header id={idGen(`${props.id}`, 'header')}/>
