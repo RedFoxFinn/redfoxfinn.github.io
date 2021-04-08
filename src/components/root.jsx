@@ -46,6 +46,7 @@ const Root = (props) => {
       ? document.getElementById('root').style.backgroundImage = styles.getBackgroundGradient(currentTheme)
       : document.getElementById('root').style.backgroundImage = styles.getBackgroundGradient('dark');
   };
+	setAppBody(currentTheme);
   
   return <HashRouter id={`${props.id}`}>
     <article id={idGen(`${props.id}`, 'app')} data-testid={idGen(`${props.id}`, 'app')} style={styles.rootElement()}>
