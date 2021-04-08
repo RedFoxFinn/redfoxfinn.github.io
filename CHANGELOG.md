@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.12](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.7.11...v0.7.12) (2021-04-08)
+
+
+### Bug Fixes
+
+* **theme:** application background setting function within root component, not in styles ([b3129b5](https://github.com/RedFoxFinn/RedFoxFinn.github.io/commit/b3129b5d888ffdbd1427511d5b94206b56f899d9))
+
 ### [0.7.11](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.7.10...v0.7.11) (2021-04-08)
 
 
