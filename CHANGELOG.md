@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.13](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.7.12...v0.7.13) (2021-04-08)
+
+
+### Bug Fixes
+
+* **theming:** fixed setAppBody issue: wasn't called ([53b6b67](https://github.com/RedFoxFinn/RedFoxFinn.github.io/commit/53b6b67ad1a773889b5e20eb7e1491ce62e46e26))
+
 ### [0.7.12](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.7.11...v0.7.12) (2021-04-08)
 
 
