@@ -22,7 +22,7 @@ import styles from '../tools/styles';
 
 const CV = (props) => {
   return <section id={`${props.id}`} data-testid={`${props.id}`} style={styles.componentMaster()}>
-    <Text.HeaderText id={idGen(`${props.id}`, 'headerText')} content={'CV'}/>
+    <Text.HeaderText id={idGen(`${props.id}`, 'headerText')} content={'CV'} altStyle={true}/>
   </section>;
 };
 

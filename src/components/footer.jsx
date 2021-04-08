@@ -9,6 +9,7 @@
 import React from 'react';
 import styles from '../tools/styles';
 import text from '../tools/text';
+import wrapTextDev from '../tools/wrapTextDev';
 
 /*
   Function name:      Footer
@@ -22,9 +23,10 @@ import text from '../tools/text';
 */
 
 const Footer = (props) => {
+  const dateTime = new Date();
   return <section id={`${props.id}`} data-testid={`${props.id}`} style={styles.row()}>
     <p style={styles.footer_first()}>{text.appName()}</p>
-    <p style={styles.footer_second()}>v{text.version()}</p>
+    <p style={styles.underlined(dateTime.getDay())}>{wrapTextDev(`v${text.version()}`)}</p>
   </section>;
 };
 

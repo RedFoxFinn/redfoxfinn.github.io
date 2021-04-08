@@ -84,53 +84,53 @@ const footer_third = () => {
     };
 };
 
-const header_dateTime = (weekday) => {
-    const fontSize = '1.1em';
-    const color = 'grey';
-    const marginLeft = '0.2em';
-    const underlines = ['Violet','Red','Orange','Yellow','Green','Cyan','Blue'];
+const underlined = (weekday, size, color) => {
+    const fontSize = size ?? '1em';
+    const fontColor = color ?? 'grey';
+    const marginLeft = '0.5em';
+    const colors = ['Violet','Red','Orange','Yellow','Green','Cyan','Blue'];
     switch (weekday) {
-        case 'monday': return {
+        case 1: return {
             fontSize: fontSize,
-            color: color,
+            color: fontColor,
             marginLeft: marginLeft,
-            textDecoration: `underline solid ${underlines[1]}`
+            textDecoration: `underline solid ${colors[1]}`
         };
-        case 'tuesday': return {
+        case 2: return {
             fontSize: fontSize,
-            color: color,
+            color: fontColor,
             marginLeft: marginLeft,
-            textDecoration: `underline solid ${underlines[2]}`
+            textDecoration: `underline solid ${colors[2]}`
         };
-        case 'wednesday': return {
+        case 3: return {
             fontSize: fontSize,
-            color: color,
+            color: fontColor,
             marginLeft: marginLeft,
-            textDecoration: `underline solid ${underlines[3]}`
+            textDecoration: `underline solid ${colors[3]}`
         };
-        case 'thursday': return {
+        case 4: return {
             fontSize: fontSize,
-            color: color,
+            color: fontColor,
             marginLeft: marginLeft,
-            textDecoration: `underline double ${underlines[4]}`
+            textDecoration: `underline solid ${colors[4]}`
         };
-        case 'friday': return {
+        case 5: return {
             fontSize: fontSize,
-            color: color,
+            color: fontColor,
             marginLeft: marginLeft,
-            textDecoration: `underline solid ${underlines[5]}`
+            textDecoration: `underline solid ${colors[5]}`
         };
-        case 'saturday': return {
+        case 6: return {
             fontSize: fontSize,
-            color: color,
+            color: fontColor,
             marginLeft: marginLeft,
-            textDecoration: `underline solid ${underlines[6]}`
+            textDecoration: `underline solid ${colors[6]}`
         };
-        case 'sunday': return {
+        case 0: return {
             fontSize: fontSize,
-            color: color,
+            color: fontColor,
             marginLeft: marginLeft,
-            textDecoration: `underline solid ${underlines[0]}`
+            textDecoration: `underline solid ${colors[0]}`
         };
         default: return null;
     }
@@ -161,6 +161,14 @@ const textM = () => {
 const textL = () => {
     return {
         fontSize: '1.25em', 
+        color: 'black',
+        maxWidth: '24em'
+    };
+};
+
+const textXL = () => {
+    return {
+        fontSize: '1.5em',
         color: 'black',
         maxWidth: '24em'
     };
@@ -214,7 +222,10 @@ const rootElement = () => {
 //   styling tool exporting
 
 export default {
-    body, header_first, header_second, row, column, infoRow, header_optional, header_dateTime,
-    sortingButton, sortings, success, textM, textL,
-    footer_first, footer_second, footer_third, textS, rootElement, componentMaster
+    body, rootElement, componentMaster,
+    row, column, infoRow, 
+    sortingButton, sortings, success,
+    header_first, header_second, header_optional, underlined,
+    footer_first, footer_second, footer_third,
+    textS, textM, textL, textXL
 };

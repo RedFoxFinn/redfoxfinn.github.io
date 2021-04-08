@@ -53,7 +53,12 @@ const LongText = (props) => {
 
 const HeaderText = (props) => {
   return <section id={`${props.id}`} data-testid={`${props.id}`}>
-    <p id={`${props.id}.content`} data-testid={`${props.id}.content`} style={styles.textL()}>{props.content}</p>
+    <p
+      id={`${props.id}.content`}
+      data-testid={`${props.id}.content`}
+      style={props.altStyle ? styles.textXL() : styles.textL()}>
+        {props.content}
+    </p>
   </section>;
 };
 
