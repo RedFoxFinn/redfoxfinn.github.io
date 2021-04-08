@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.11](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.7.10...v0.7.11) (2021-04-08)
+
+
+### Features
+
+* **theme:** root component now triggers theme setting ([8d63d07](https://github.com/RedFoxFinn/RedFoxFinn.github.io/commit/8d63d07710908f0622324ec0797ee2a0610000a0))
+
 ### [0.7.10](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.7.9...v0.7.10) (2021-04-08)
 
 ### [0.7.9](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.7.8...v0.7.9) (2021-04-08)
