@@ -6,7 +6,7 @@
   Description:  Root component for app
 */
 
-import React, {} from 'react';
+import React, { useState } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import styles from '../tools/styles';
 import Home from './home';
@@ -19,10 +19,13 @@ import Navigator from './navigator';
 import idGen from '../tools/idGen';
 import theme from '../tools/theme';
 
-const setAppBody = () => {
-  document.getElementById('root').style.backgroundImage = styles.body(theme.checkTheme().theme).backgroundImage;
-  document.getElementById('root').style.height = window.innerHeight;
-};
+/*
+  Function name:      setAppBody
+  Function type:      arrow function / helper
+  Desctiption:        setAppBody sets 
+                      Root is the first component of the application 
+                      Root uses React router for routing between different views
+*/
 
 /*
   Function name:      Root
@@ -35,7 +38,15 @@ const setAppBody = () => {
 */
 
 const Root = (props) => {
-  setAppBody();
+  const [currentTheme, setCurrentTheme] = useState(theme.checkTheme().theme);
+  
+  const setAppBody = (selection) => {
+    document.getElementById('root').style.height = window.innerHeight;
+    theme.themes().includes(currentTheme)
+      ? document.getElementById('root').style.backgroundImage = styles.getBackgroundGradient(currentTheme)
+      : document.getElementById('root').style.backgroundImage = styles.getBackgroundGradient('dark');
+  };
+  
   return <HashRouter id={`${props.id}`}>
     <article id={idGen(`${props.id}`, 'app')} data-testid={idGen(`${props.id}`, 'app')} style={styles.rootElement()}>
       <Header id={idGen(`${props.id}`, 'header')}/>

@@ -192,12 +192,18 @@ const sortingButton = () => {
     };
 };
 
-const body = (selection) => {
-    return selection === 'light' ? {
-        backgroundImage: 'linear-gradient(-45deg, #ffffff, #ff8c00)',
-    } : {
-        backgroundImage: 'linear-gradient(-45deg, #000000, #696969, #ff8c00)',
-    };
+/*
+  Function name:      setAppBody
+  Function type:      arrow function / helper
+  Desctiption:        setAppBody sets 
+                      Root is the first component of the application 
+                      Root uses React router for routing between different views
+*/
+
+const getBackgroundGradient = (selection) => {
+    return selection === 'light'
+    ? 'linear-gradient(-45deg, #ffffff, #ff8c00)'
+    : 'linear-gradient(-45deg, #000000, #696969, #ff8c00)';
 };
 
 const componentMaster = () => {
@@ -222,7 +228,7 @@ const rootElement = () => {
 //   styling tool exporting
 
 export default {
-    body, rootElement, componentMaster,
+    getBackgroundGradient, rootElement, componentMaster,
     row, column, infoRow, 
     sortingButton, sortings, success,
     header_first, header_second, header_optional, underlined,

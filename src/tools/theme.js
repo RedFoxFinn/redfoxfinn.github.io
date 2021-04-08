@@ -10,6 +10,10 @@
 import styles from './styles';
 import checker from './checker';
 
+const themes = () => {
+  return ['dark','light'];
+};
+
 const checkTheme = () => {
   let theme = localStorage.getItem('rff.io.theme');
   if (theme && checker.themeIsValid(theme)) {
@@ -61,5 +65,5 @@ const setDark = () => {
 };
 
 export default {
-  checkTheme, setTheme
+  checkTheme, setTheme, themes
 };
