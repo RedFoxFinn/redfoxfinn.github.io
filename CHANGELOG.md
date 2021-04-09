@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.15](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.7.14...v0.7.15) (2021-04-09)
+
+
+### Features
+
+* **global state:** added Redux/Redux-Saga/React-Redux global state to application ([b83bf6f](https://github.com/RedFoxFinn/RedFoxFinn.github.io/commit/b83bf6fe17a9e840051d865ce36fcad770a513cd))
+
 ### [0.7.14](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.7.13...v0.7.14) (2021-04-08)
 
 ### [0.7.13](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.7.12...v0.7.13) (2021-04-08)
