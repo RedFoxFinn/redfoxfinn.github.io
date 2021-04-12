@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.8.0](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.7.16...v0.8.0) (2021-04-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* **global state:** due removal of major libraries, old version differs quite a lot: new version relies
+on react context api instead of old redux, react-redux & redux-saga -combination-
+
+### Features
+
+* **global state:** removed redux, react-redux & redux-saga, global state using react context api ([50658ab](https://github.com/RedFoxFinn/RedFoxFinn.github.io/commit/50658abfe097a209766885b3b2001411d0591002))
+
 ### [0.7.16](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.7.15...v0.7.16) (2021-04-12)
 
 ### [0.7.15](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.7.14...v0.7.15) (2021-04-09)
