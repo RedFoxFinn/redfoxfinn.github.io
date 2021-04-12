@@ -7,7 +7,6 @@
   Description:  Tool that sets or gets theme by using localStorage. Checks validity by using checker tools.
 */
 
-import styles from './styles';
 import checker from './checker';
 
 const themes = () => {
@@ -49,19 +48,19 @@ const setTheme = (theme) => {
         break;
       }
     }
+    return null;
   } else {
     setDark();
+    return null;
   }
 };
 
 const setLight = () => {
   localStorage.setItem('rff.io.theme', 'light');
-  document.getElementById('root').style.backgroundImage = styles.body('light').backgroundImage;
 };
 
 const setDark = () => {
   localStorage.setItem('rff.io.theme', 'dark');
-  document.getElementById('root').style.backgroundImage = styles.body('dark').backgroundImage;
 };
 
 export default {

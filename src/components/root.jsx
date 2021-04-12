@@ -6,7 +6,7 @@
   Description:  Root component for app
 */
 
-import React, { useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import styles from '../tools/styles';
 import Home from './home';
@@ -18,6 +18,8 @@ import Footer from './footer';
 import Navigator from './navigator';
 import idGen from '../tools/idGen';
 import theme from '../tools/theme';
+import {Context, actionTypes} from '../controllers/state';
+import language from '../tools/language';
 
 /*
   Function name:      setAppBody
@@ -38,15 +40,28 @@ import theme from '../tools/theme';
 */
 
 const Root = (props) => {
-  const [currentTheme, setCurrentTheme] = useState(theme.checkTheme().theme);
-  
-  const setAppBody = (selection) => {
+  const [state, dispatch] = useContext(Context);
+
+  useEffect(() => {
+    const selection = theme.checkTheme().theme;
     document.getElementById('root').style.height = window.innerHeight;
-    theme.themes().includes(currentTheme)
-      ? document.getElementById('root').style.backgroundImage = styles.getBackgroundGradient(currentTheme)
-      : document.getElementById('root').style.backgroundImage = styles.getBackgroundGradient('dark');
-  };
-	setAppBody(currentTheme);
+    if (theme.themes().includes(selection)) {
+      dispatch({type: actionTypes[1], theme: selection});
+      document.getElementById('root').style.backgroundImage = styles.getBackgroundGradient(selection);
+    } else {
+      dispatch({type: actionTypes[1], theme: 'dark'})
+      document.getElementById('root').style.backgroundImage = styles.getBackgroundGradient('dark');
+    }
+  }, [theme]);
+  useEffect(() => {
+    const selection = language.checkLang().lang;
+    if (language.languages().includes(selection)) {
+      dispatch({type: actionTypes[0], language: selection});
+    } else {
+      dispatch({type: actionTypes[0], language: 'en'});
+    }
+  }, [language]);
+	
   
   return <HashRouter id={`${props.id}`}>
     <article id={idGen(`${props.id}`, 'app')} data-testid={idGen(`${props.id}`, 'app')} style={styles.rootElement()}>

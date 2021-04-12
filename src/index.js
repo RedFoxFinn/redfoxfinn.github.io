@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
 import reportWebVitals from './reportWebVitals';
 
 import Root from './components/root';
 import text from './tools/text';
-import store from './controllers/redux/store';
+import Store from './controllers/state';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}><Root id={`${text.appId()}`}/></Provider>
+    <Store>
+      <Root id={`${text.appId()}`}/>
+    </Store>
   </React.StrictMode>,
   document.getElementById('root')
 );

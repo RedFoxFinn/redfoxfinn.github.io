@@ -9,6 +9,10 @@
 
 import checker from './checker';
 
+const languages = () => {
+  return ['en', 'fi'];
+};
+
 const checkLang = () => {
   const lang = localStorage.getItem('rff.io.lang');
   if (lang && checker.langIsValid(lang)) {
@@ -41,4 +45,4 @@ const setLang = (lang) => {
   }
 }
 
-export default {checkLang, setLang};
+export default {checkLang, setLang, languages};
