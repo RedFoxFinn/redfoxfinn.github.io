@@ -7,130 +7,194 @@
   Description:  Tool that provides inline styling for React components
 */
 
+const units = Object.freeze({
+    PX: 'px',
+    EM: 'em'
+});
+
+const sizes = Object.freeze({
+    XXS: 0.25,
+    XS: 0.5,
+    S: 0.75,
+    M: 1,
+    L: 1.25,
+    XL: 1.5,
+    XXL: 1.75
+});
+
+const colors = Object.freeze({
+    BLACK: 'black',
+    GREY: 'grey',
+    DIMGRAY: 'dimgray',
+    VIOLET: 'violet',
+    RED: 'red',
+    ORANGE: 'orange',
+    DARKORANGE: 'darkorange',
+    YELLOW: 'yellow',
+    GREEN: 'green',
+    CYAN: 'cyan',
+    BLUE: 'blue',
+    FORESTGREEN: 'forestgreen',
+    TRANSPARENT: 'transparent',
+    WHITE: 'white'
+});
+
+const customColors = ({
+    RED_C: '#dc4233',
+    GRADIENT_LIGHT: `linear-gradient(-45deg, ${colors.WHITE}, ${colors.DARKORANGE})`,
+    GRADIENT_DARK: `linear-gradient(-45deg, ${colors.BLACK}, ${colors.DIMGRAY}, ${colors.DARKORANGE})`
+});
+
+const decorations = Object.freeze({
+    UNDERLINE: 'underline'
+});
+
+const extras = Object.freeze({
+    SOLID: 'solid',
+    DASHED: 'dashed'
+});
+
+const directions = Object.freeze({
+    COLUMN: 'column',
+    ROW: 'row'
+});
+
+const display = Object.freeze({
+    BLOCK: 'block',
+    FLEX: 'flex'
+});
+
+const positions = Object.freeze({
+    TOP: 'top',
+    BOTTOM: 'bottom',
+    CENTER: 'center',
+    LEFT: 'left',
+    RIGHT: 'right'
+});
+
 // Function definitions for styling tool
 
 const column = () => {
     return {
-        display: 'flex', 
-        flexDirection: 'column', 
-        alignItems: 'center', 
-        alignContent: 'center'
+        display: display.FLEX, 
+        flexDirection: directions.COLUMN, 
+        alignItems: positions.CENTER, 
+        alignContent: positions.CENTER
     };
 };
 
 const sortings = () => {
     return {
-        marginLeft: '1em', 
-        marginRight: '1em', 
-        display: 'flex', 
-        flexDirection: 'column', 
-        alignItems: 'center', 
-        alignContent: 'center'
+        marginLeft: `${sizes.M}${units.EM}`, 
+        marginRight: `${sizes.M}${units.EM}`, 
+        display: display.FLEX, 
+        flexDirection: directions.COLUMN, 
+        alignItems: positions.CENTER, 
+        alignContent: positions.CENTER
     };
 };
 
 const row = () => {
     return {
-        display: 'flex', 
-        flexDirection: 'row', 
-        alignItems: 'center', 
-        alignContent: 'center'
+        display: display.FLEX, 
+        flexDirection: directions.ROW, 
+        alignItems: positions.CENTER, 
+        alignContent: positions.CENTER
     };
 };
 
 const infoRow = () => {
     return {
-        display: 'flex', 
-        flexDirection: 'row', 
-        alignItems: 'center', 
-        alignContent: 'center', 
-        height: '4em'
+        display: display.FLEX, 
+        flexDirection: directions.ROW, 
+        alignItems: positions.CENTER, 
+        alignContent: positions.CENTER, 
+        height: `${4*sizes.M}${units.EM}`
     };
 };
 
 const header_first = () => {
     return {
-        fontSize: '3em', 
-        color: 'black'
+        fontSize: `${3*sizes.M}${units.EM}`, 
+        color: colors.BLACK
     };
 };
 
 const header_optional = () => {
     return {
-        fontSize: '2.5em', 
-        color: 'black'
+        fontSize: `${2*sizes.L}${units.EM}`, 
+        color: colors.BLACK
     };
 };
 
 const footer_first = () => {
     return {
-        fontSize: '1em',
-        color: 'black'
+        fontSize: `${sizes.M}${units.EM}`,
+        color: colors.BLACK
     };
 };
 
 const footer_second = () => {
     return {
-        fontSize: '1em',
-        color: 'grey',
-        marginLeft: '0.5em'
+        fontSize: `${sizes.M}${units.EM}`,
+        color: colors.GREY,
+        marginLeft: `${sizes.XS}${units.EM}`
     };
 };
 const footer_third = () => {
     return {
-        fontSize: '1em',
-        color: 'grey',
-        marginLeft: '0.5em'
+        fontSize: `${sizes.M}${units.EM}`,
+        color: colors.GREY,
+        marginLeft: `${sizes.XS}${units.EM}`
     };
 };
 
 const underlined = (weekday, size, color) => {
-    const fontSize = size ?? '1em';
-    const fontColor = color ?? 'grey';
-    const marginLeft = '0.5em';
-    const colors = ['Violet','Red','Orange','Yellow','Green','Cyan','Blue'];
+    const fontSize = size ?? `${sizes.M}${units.EM}`;
+    const fontColor = color ?? colors.GREY;
+    const marginLeft = `${sizes.XS}${units.EM}`;
     switch (weekday) {
         case 1: return {
             fontSize: fontSize,
             color: fontColor,
             marginLeft: marginLeft,
-            textDecoration: `underline solid ${colors[1]}`
+            textDecoration: `${decorations.UNDERLINE} ${extras.SOLID} ${colors.RED}`
         };
         case 2: return {
             fontSize: fontSize,
             color: fontColor,
             marginLeft: marginLeft,
-            textDecoration: `underline solid ${colors[2]}`
+            textDecoration: `${decorations.UNDERLINE} ${extras.SOLID} ${colors.ORANGE}`
         };
         case 3: return {
             fontSize: fontSize,
             color: fontColor,
             marginLeft: marginLeft,
-            textDecoration: `underline solid ${colors[3]}`
+            textDecoration: `${decorations.UNDERLINE} ${extras.SOLID} ${colors.YELLOW}`
         };
         case 4: return {
             fontSize: fontSize,
             color: fontColor,
             marginLeft: marginLeft,
-            textDecoration: `underline solid ${colors[4]}`
+            textDecoration: `${decorations.UNDERLINE} ${extras.SOLID} ${colors.GREEN}`
         };
         case 5: return {
             fontSize: fontSize,
             color: fontColor,
             marginLeft: marginLeft,
-            textDecoration: `underline solid ${colors[5]}`
+            textDecoration: `${decorations.UNDERLINE} ${extras.SOLID} ${colors.CYAN}`
         };
         case 6: return {
             fontSize: fontSize,
             color: fontColor,
             marginLeft: marginLeft,
-            textDecoration: `underline solid ${colors[6]}`
+            textDecoration: `${decorations.UNDERLINE} ${extras.SOLID} ${colors.BLUE}`
         };
         case 0: return {
             fontSize: fontSize,
             color: fontColor,
             marginLeft: marginLeft,
-            textDecoration: `underline solid ${colors[0]}`
+            textDecoration: `${decorations.UNDERLINE} ${extras.SOLID} ${colors.VIOLET}`
         };
         default: return null;
     }
@@ -138,57 +202,57 @@ const underlined = (weekday, size, color) => {
 
 const header_second = () => {
     return {
-        fontSize: '1em', 
-        color: 'grey'
+        fontSize: `${sizes.M}${units.EM}`, 
+        color: colors.GREY
     };
 };
 
 const textS = () => {
     return {
-        fontSize: '0.75em',
-        color: 'grey'
+        fontSize: `${sizes.S}${units.EM}`,
+        color: colors.GREY
     };
 };
 
 const textM = () => {
     return {
-        fontSize: '1em', 
-        color: 'black',
-        maxWidth: '24em'
+        fontSize: `${sizes.M}${units.EM}`,
+        color: colors.BLACK,
+        maxWidth: `${24*sizes.M}${units.EM}`
     };
 };
 
 const textL = () => {
     return {
-        fontSize: '1.25em', 
-        color: 'black',
-        maxWidth: '24em'
+        fontSize: `${sizes.L}${units.EM}`, 
+        color: colors.BLACK,
+        maxWidth: `${24*sizes.M}${units.EM}`
     };
 };
 
 const textXL = () => {
     return {
-        fontSize: '1.5em',
-        color: 'black',
-        maxWidth: '24em'
+        fontSize: `${sizes.XL}${units.EM}`,
+        color: colors.BLACK,
+        maxWidth: `${24*sizes.M}${units.EM}`
     };
 };
 
 const success = () => {
     return {
-        fontSize: '1em', 
-        color: 'forestgreen'
+        fontSize: `${sizes.M}${units.EM}`, 
+        color: colors.FORESTGREEN
     };
 };
 
 const sortingButton = () => {
     return {
-        marginBottom: '0.5em', 
-        width: '12em', 
-        height: '2em', 
-        outline: '1px solid #dc4233', 
-        border: '1px solid transparent', 
-        background: 'transparent'
+        marginBottom: `${sizes.XS}${units.EM}`,
+        width: `${12*sizes.M}${units.EM}`,
+        height: `${2*sizes.M}${units.EM}`,
+        outline: `${sizes.M}${units.PX} solid ${customColors.RED_C}`, 
+        border: `${sizes.M}${units.PX} solid ${colors.TRANSPARENT}`, 
+        background: colors.TRANSPARENT
     };
 };
 
@@ -202,26 +266,26 @@ const sortingButton = () => {
 
 const getBackgroundGradient = (selection) => {
     return selection === 'light'
-    ? 'linear-gradient(-45deg, #ffffff, #ff8c00)'
-    : 'linear-gradient(-45deg, #000000, #696969, #ff8c00)';
+    ? customColors.GRADIENT_LIGHT
+    : customColors.GRADIENT_DARK;
 };
 
 const componentMaster = () => {
     return {
-        display: 'flex',
-        flexDirection: 'column',
-        alignContent: 'center',
-        alignItems: 'center',
-        margin: '1em'
+        display: display.FLEX,
+        flexDirection: directions.COLUMN,
+        alignContent: positions.CENTER,
+        alignItems: positions.CENTER,
+        margin: `${sizes.M}${units.EM}`
     };
 };
 
 const rootElement = () => {
     return {
-        display: 'flex', 
-        flexDirection: 'column', 
-        alignItems: 'center', 
-        alignContent: 'center'
+        display: display.FLEX,
+        flexDirection: directions.COLUMN, 
+        alignItems: positions.CENTER, 
+        alignContent: positions.CENTER
     };
 };
 
