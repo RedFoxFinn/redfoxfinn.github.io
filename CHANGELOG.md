@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.8.1](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.8.0...v0.8.1) (2021-04-13)
+
+
+### Features
+
+* **selector styling:** added styling to theme and language selectors ([7905d79](https://github.com/RedFoxFinn/RedFoxFinn.github.io/commit/7905d79be8afa38542b51a6a7f7dd450d67841cf))
+
 ## [0.8.0](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.7.16...v0.8.0) (2021-04-12)
 
 
