@@ -28,8 +28,8 @@ const ThemeSelector = (props) => {
     }
   };
 
-  const lightThemeSelector = () => <button value='light' onClick={({target}) => switchToTheme(target.value)}>{'switch to light theme'}</button>;
-  const darkThemeSelector = () => <button value='dark' onClick={({target}) => switchToTheme(target.value)}>{'switch to dark theme'}</button>;
+  const lightThemeSelector = () => <input alt='light theme' type='image' src='https://api.iconify.design/wpf:sun.svg?height=24' value='light' onClick={({target}) => switchToTheme(target.value)} />;
+  const darkThemeSelector = () => <input alt='dark theme' type='image' src='https://api.iconify.design/wpf-bright-moon.svg?height=24' value='dark' onClick={({target}) => switchToTheme(target.value)} />;
   
   return state && state.theme
     ? <Fragment>
@@ -58,8 +58,10 @@ const LanguageSelector = (props) => {
     }
   };
 
-  const finnishSelector = () => <button value='fi' onClick={({target}) => switchToLang(target.value)}>{'switch to finnish'}</button>;
-  const englishSelector = () => <button value='en' onClick={({target}) => switchToLang(target.value)}>{'switch to english'}</button>;
+  const finnishSelector = () => <input type='image' value='fi' alt='Finnish'
+    src='https://www.countryflags.io/fi/flat/32.png' onClick={({target}) => switchToLang(target.value)}/>;
+  const englishSelector = () => <input type='image' value='en' alt='English'
+    src='https://www.countryflags.io/au/flat/32.png' onClick={({target}) => switchToLang(target.value)}/>;
 
   return state && state.language
     ? <Fragment>
