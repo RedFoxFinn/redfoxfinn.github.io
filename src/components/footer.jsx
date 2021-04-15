@@ -25,8 +25,8 @@ import wrapTextDev from '../tools/wrapTextDev';
 const Footer = (props) => {
   const dateTime = new Date();
   return <section id={`${props.id}`} data-testid={`${props.id}`} style={styles.row()}>
-    <p style={styles.footer_first()}>{text.appName()}</p>
-    <p style={styles.underlined(dateTime.getDay())}>{wrapTextDev(`v${text.version()}`)}</p>
+    <p id={`${props.id}.first`} data-testid={`${props.id}.first`} style={styles.footer_first()}>{text.appName()}</p>
+    <p id={`${props.id}.second`} data-testid={`${props.id}.second`} style={styles.underlined(dateTime.getDay())}>{wrapTextDev(`v${text.version()}`)}</p>
   </section>;
 };
 

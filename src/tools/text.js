@@ -39,22 +39,44 @@ const home = (lang) => {
 
 const navHome = (lang) => {
   const langIsValid = checker.langIsValid(lang);
-  return langIsValid && lang === 'fi' ? content.navigation[0].fi.toString() : content.navigation[0].en.toString();
+  return langIsValid && lang === 'fi'
+    ? content.navigation[0].fi.toString()
+    : content.navigation[0].en.toString();
 };
 
 const navAbout = (lang) => {
   const langIsValid = checker.langIsValid(lang);
-  return langIsValid && lang === 'fi' ? content.navigation[3].fi.toString() : content.navigation[3].en.toString();
+  return langIsValid && lang === 'fi'
+    ? content.navigation[3].fi.toString()
+    : content.navigation[3].en.toString();
 };
 
 const navCV = (lang) => {
   const langIsValid = checker.langIsValid(lang);
-  return langIsValid && lang === 'fi' ? content.navigation[1].fi.toString() : content.navigation[1].en.toString();
+  return langIsValid && lang === 'fi'
+    ? content.navigation[1].fi.toString()
+    : content.navigation[1].en.toString();
 };
 
 const navLinks = (lang) => {
   const langIsValid = checker.langIsValid(lang);
-  return langIsValid && lang === 'fi' ? content.navigation[2].fi.toString() : content.navigation[2].en.toString();
+  return langIsValid && lang === 'fi'
+    ? content.navigation[2].fi.toString()
+    : content.navigation[2].en.toString();
+};
+
+const dependencies = (lang) => {
+  const langIsValid = checker.langIsValid(lang);
+  return langIsValid && lang === 'fi'
+    ? content.general.dependencies.fi.toString()
+    : content.general.dependencies.en.toString();
+}
+
+const devDependencies = (lang) => {
+  const langIsValid = checker.langIsValid(lang);
+  return langIsValid && lang === 'fi'
+    ? content.general.devDependencies.fi.toString()
+    : content.general.devDependencies.en.toString();
 };
 
 const themeSelectorDark = (lang, current) => {
@@ -129,5 +151,5 @@ export default {
   author, version, appId, appName,
   about, home, devSoftware, packages, devPackages,
   navHome, navAbout, navCV, navLinks,
-  themeSelectorDark, themeSelectorLight
+  dependencies, devDependencies, themeSelectorDark, themeSelectorLight
 };

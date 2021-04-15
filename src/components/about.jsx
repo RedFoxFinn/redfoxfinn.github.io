@@ -25,11 +25,13 @@ let texts;
                       id | generated component id
 */
 
-const generateFrameworksLibraries = (id) => {
+const generateFrameworksLibraries = (id, lang) => {
   const devPackages = text.devPackages();
   const packages = text.packages();
   return <Fragment>
     <Text.HeaderText id={idGen(`${id}`, 'headerText')} content={texts[1]}/>
+    <Text.PackageText id={idGen(`${id}`, 'packageText', 1)} packageTypes={text.dependencies(lang)} packages={packages}/>
+    <Text.PackageText id={idGen(`${id}`, 'packageText', 2)} packageTypes={text.devDependencies(lang)} packages={devPackages}/>
   </Fragment>;
 };
 
@@ -72,7 +74,7 @@ const About = (props) => {
   texts = text.about(lang);
   return <section id={`${props.id}`} data-testid={`${props.id}`} style={styles.componentMaster()}>
     <Text.HeaderText id={idGen(`${props.id}`, 'headerText')} content={texts[0]} altStyle={true}/>
-    {generateFrameworksLibraries(props.id)}
+    {generateFrameworksLibraries(props.id, lang)}
     {generateSoftwareTools(props.id)}
   </section>;
 };

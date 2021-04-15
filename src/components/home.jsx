@@ -24,9 +24,8 @@ import selector from './selector';
                       id    | parent component id
 */
 
-const generateTextContent = (id) => {
-  const lang = language.checkLang();
-  const texts = text.home(lang);
+const HomeTextContent = ({id}) => {
+  const texts = text.home(language.checkLang());
   return <Fragment>
     {texts.map(content => {
       let genId;
@@ -51,9 +50,7 @@ const generateTextContent = (id) => {
 
 const Home = (props) => {
   return <section id={`${props.id}`} data-testid={`${props.id}`} style={styles.componentMaster()}>
-    {generateTextContent(props.id)}
-    <selector.LanguageSelector/>
-    <selector.ThemeSelector/>
+    <HomeTextContent id={props.id}/>
   </section>;
 }
 

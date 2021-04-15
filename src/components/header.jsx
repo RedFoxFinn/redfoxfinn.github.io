@@ -9,6 +9,7 @@
 import React from 'react';
 import styles from '../tools/styles';
 import text from '../tools/text';
+import wrapTextDev from '../tools/wrapTextDev';
 
 /*
   Function name:      Header
@@ -20,8 +21,9 @@ import text from '../tools/text';
 */
 
 const Header = (props) => {
+  const generateContentId = () => `${props.id}.content`;
   return <section id={`${props.id}`} data-testid={`${props.id}`} style={styles.row()}>
-    <p style={styles.header_first()}>{text.author()}</p>
+    <p style={styles.header_first()} id={generateContentId()} data-testid={generateContentId()}>{wrapTextDev(text.author())}</p>
   </section>;
 };
 

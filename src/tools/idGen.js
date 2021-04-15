@@ -25,6 +25,7 @@ const idGen = (parentId, idFor, ...rest) => {
     case 'longText': return `${parentId}.longText.${rest[0]}`;
     case 'headerText': return `${parentId}.headerText`;
     case 'detailText': return `${parentId}.detailText.${rest[0]}`;
+    case 'packageText': return `${parentId}.packageText.${rest[0]}`;
     default: return `${parentId}.default`;
   }
 };

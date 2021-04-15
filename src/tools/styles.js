@@ -149,9 +149,9 @@ const footer_third = () => {
     };
 };
 
-const underlined = (weekday, size, color) => {
-    const fontSize = size ?? `${sizes.M}${units.EM}`;
-    const fontColor = color ?? colors.GREY;
+const underlined = (weekday, size = `${sizes.M}${units.EM}`, color = colors.GREY) => {
+    const fontSize = size;
+    const fontColor = color;
     const marginLeft = `${sizes.XS}${units.EM}`;
     switch (weekday) {
         case 1: return {
@@ -196,7 +196,12 @@ const underlined = (weekday, size, color) => {
             marginLeft: marginLeft,
             textDecoration: `${decorations.UNDERLINE} ${extras.SOLID} ${colors.VIOLET}`
         };
-        default: return null;
+        default: return {
+            fontSize: fontSize,
+            color: fontColor,
+            marginLeft: marginLeft,
+            textDecoration: `${decorations.UNDERLINE} ${extras.SOLID} black`
+        };
     }
 };
 
@@ -210,7 +215,8 @@ const header_second = () => {
 const textS = () => {
     return {
         fontSize: `${sizes.S}${units.EM}`,
-        color: colors.GREY
+        color: colors.GREY,
+        maxWidth: `${24*sizes.M}${units.EM}`
     };
 };
 

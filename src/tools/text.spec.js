@@ -318,3 +318,52 @@ describe('tool unit tests - text - themeSelector', () => {
     expect(selectorText).toMatch(`${content.theme.light.en} ${content.theme.theme.en}`);
   });
 });
+
+describe('tool unit tests - text - about/dependencies', () => {
+  let dummy = false;
+  it('dummy', () => {
+    expect(dummy).toBe(false);
+    dummy = true;
+    expect(dummy).toBe(true);
+  });
+  it('dependencies - default', () => {
+    const dependenciesText = text.dependencies();
+    expect(dependenciesText).toBeTruthy();
+    expect(dependenciesText).toMatch(`${content.general.dependencies.en}`);
+  });
+  it('dependencies - en', () => {
+    const dependenciesText = text.dependencies('en');
+    expect(dependenciesText).toBeTruthy();
+    expect(dependenciesText).toMatch(`${content.general.dependencies.en}`);
+  });
+  it('dependencies - fi', () => {
+    const dependenciesText = text.dependencies('fi');
+    expect(dependenciesText).toBeTruthy();
+    expect(dependenciesText).toMatch(`${content.general.dependencies.fi}`);
+  });
+  it('dependencies - sv', () => {
+    const dependenciesText = text.dependencies('sv');
+    expect(dependenciesText).toBeTruthy();
+    expect(dependenciesText).toMatch(`${content.general.dependencies.en}`);
+  });
+  it('devDependencies - default', () => {
+    const devDependenciesText = text.devDependencies();
+    expect(devDependenciesText).toBeTruthy();
+    expect(devDependenciesText).toMatch(`${content.general.devDependencies.en}`);
+  });
+  it('devDependencies - en', () => {
+    const devDependenciesText = text.devDependencies('en');
+    expect(devDependenciesText).toBeTruthy();
+    expect(devDependenciesText).toMatch(`${content.general.devDependencies.en}`);
+  });
+  it('devDependencies - fi', () => {
+    const devDependenciesText = text.devDependencies('fi');
+    expect(devDependenciesText).toBeTruthy();
+    expect(devDependenciesText).toMatch(`${content.general.devDependencies.fi}`);
+  });
+  it('devDependencies - sv', () => {
+    const devDependenciesText = text.devDependencies('sv');
+    expect(devDependenciesText).toBeTruthy();
+    expect(devDependenciesText).toMatch(`${content.general.devDependencies.en}`);
+  });
+});

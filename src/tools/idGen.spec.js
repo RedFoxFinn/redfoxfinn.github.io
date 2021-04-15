@@ -99,4 +99,9 @@ describe('tool unit tests - idGen', () => {
     expect(gen).toBeTruthy();
     expect(gen).toMatch(`${appId}.detailText.4`);
   });
+  it('packageText', () => {
+    const gen = idGen(`${appId}`, 'packageText', 2);
+    expect(gen).toBeTruthy();
+    expect(gen).toMatch(`${appId}.packageText.2`);
+  });
 });
