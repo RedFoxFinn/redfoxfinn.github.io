@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.9.0](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.8.3...v0.9.0) (2021-04-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **html:** SEO effectively changed due title & description changes on index.html
+
+* **html:** changed index.html title, description, default background color ([576aa34](https://github.com/RedFoxFinn/RedFoxFinn.github.io/commit/576aa34f06182b07bee48063123aa99d7c2db1d2))
+
 ### [0.8.3](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.8.2...v0.8.3) (2021-04-15)
 
 
