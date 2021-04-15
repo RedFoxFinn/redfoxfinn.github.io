@@ -13,7 +13,6 @@ import idGen from '../tools/idGen';
 import text from '../tools/text';
 import language from '../tools/language';
 import styles from '../tools/styles';
-import selector from './selector';
 
 /*
   Function name:      generateTextContent

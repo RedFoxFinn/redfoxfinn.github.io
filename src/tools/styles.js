@@ -262,13 +262,26 @@ const sortingButton = () => {
     };
 };
 
-/*
-  Function name:      setAppBody
-  Function type:      arrow function / helper
-  Desctiption:        setAppBody sets 
-                      Root is the first component of the application 
-                      Root uses React router for routing between different views
-*/
+const marginS = () => {
+    return {
+        marginLeft: `${sizes.S}${units.EM}`,
+        marginRight: `${sizes.S}${units.EM}`
+    };
+};
+
+const marginM = () => {
+    return {
+        marginLeft: `${sizes.M}${units.EM}`,
+        marginRight: `${sizes.M}${units.EM}`
+    };
+};
+
+const marginL = () => {
+    return {
+        marginLeft: `${sizes.L}${units.EM}`,
+        marginRight: `${sizes.L}${units.EM}`
+    };
+};
 
 const getBackgroundGradient = (selection) => {
     return selection === 'light'
@@ -303,5 +316,6 @@ export default {
     sortingButton, sortings, success,
     header_first, header_second, header_optional, underlined,
     footer_first, footer_second, footer_third,
-    textS, textM, textL, textXL
+    textS, textM, textL, textXL,
+    marginS, marginM, marginL
 };

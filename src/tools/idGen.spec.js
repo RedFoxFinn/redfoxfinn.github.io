@@ -104,4 +104,25 @@ describe('tool unit tests - idGen', () => {
     expect(gen).toBeTruthy();
     expect(gen).toMatch(`${appId}.packageText.2`);
   });
+  it('selectors', () => {
+    const gen = idGen(`${appId}`, 'selectors');
+    expect(gen).toBeTruthy();
+    expect(gen).toMatch(`${appId}.selectors`);
+  });
+  it('themeSelector', () => {
+    let gen = idGen(`${appId}`, 'themeSelector', 'dark');
+    expect(gen).toBeTruthy();
+    expect(gen).toMatch(`${appId}.theme.dark`);
+    gen = idGen(`${appId}`, 'themeSelector', 'light');
+    expect(gen).toBeTruthy();
+    expect(gen).toMatch(`${appId}.theme.light`);
+  });
+  it('languageSelector', () => {
+    let gen = idGen(`${appId}`, 'languageSelector','en');
+    expect(gen).toBeTruthy();
+    expect(gen).toMatch(`${appId}.language.en`);
+    gen = idGen(`${appId}`, 'languageSelector','fi');
+    expect(gen).toBeTruthy();
+    expect(gen).toMatch(`${appId}.language.fi`);
+  });
 });

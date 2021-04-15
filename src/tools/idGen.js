@@ -26,6 +26,9 @@ const idGen = (parentId, idFor, ...rest) => {
     case 'headerText': return `${parentId}.headerText`;
     case 'detailText': return `${parentId}.detailText.${rest[0]}`;
     case 'packageText': return `${parentId}.packageText.${rest[0]}`;
+    case 'selectors': return `${parentId}.selectors`;
+    case 'themeSelector': return `${parentId}.theme.${rest[0]}`;
+    case 'languageSelector': return `${parentId}.language.${rest[0]}`;
     default: return `${parentId}.default`;
   }
 };

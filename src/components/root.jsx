@@ -20,6 +20,7 @@ import idGen from '../tools/idGen';
 import theme from '../tools/theme';
 import {Context, actionTypes} from '../controllers/state';
 import language from '../tools/language';
+import UISelector from './selector';
 
 /*
   Function name:      setAppBody
@@ -49,8 +50,8 @@ const Root = (props) => {
       dispatch({type: actionTypes[1], theme: selection});
       document.getElementById('root').style.backgroundImage = styles.getBackgroundGradient(selection);
     } else {
-      dispatch({type: actionTypes[1], theme: 'dark'})
-      document.getElementById('root').style.backgroundImage = styles.getBackgroundGradient('dark');
+      dispatch({type: actionTypes[1], theme: 'light'})
+      document.getElementById('root').style.backgroundImage = styles.getBackgroundGradient('light');
     }
   }, [theme]);
   useEffect(() => {
@@ -74,6 +75,7 @@ const Root = (props) => {
         <Route path='/links' children={<Links id={idGen(`${props.id}`, 'links')}/>}/>
       </Switch>
       <Footer id={idGen(`${props.id}`, 'footer')}/>
+      <UISelector id={idGen(`${props.id}`, 'selectors')}/>
     </article>
   </HashRouter>;
 };

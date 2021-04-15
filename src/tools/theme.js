@@ -22,7 +22,7 @@ const checkTheme = () => {
       status: 'done'
     };
   } else {
-    setDark();
+    setLight();
     theme = localStorage.getItem('rff.io.theme');
     return {
       action: 'autoSet',

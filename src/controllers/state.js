@@ -6,12 +6,12 @@ export const actionTypes = ['SWITCH_LANG', 'SWITCH_THEME'];
 
 const generateInitialState = () => {
   return {
-    theme: 'dark',
+    theme: 'light',
     language: 'en'
   };
 };
 
-const FirstReducer = (state = generateInitialState(), action) => {
+const applicationReducer = (state = generateInitialState(), action) => {
   switch (action.type) {
     case actionTypes[0]: return {
       ...state, 
@@ -26,7 +26,7 @@ const FirstReducer = (state = generateInitialState(), action) => {
 };
 
 const Store = ({children}) => {
-  const [state, dispatch] = useReducer(FirstReducer);
+  const [state, dispatch] = useReducer(applicationReducer);
 
   return <Context.Provider value={[state, dispatch]}>
     {children}
