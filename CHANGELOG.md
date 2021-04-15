@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.8.3](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.8.2...v0.8.3) (2021-04-15)
+
+
+### Features
+
+* **selectors:** added new component: UISelectors ([fef4593](https://github.com/RedFoxFinn/RedFoxFinn.github.io/commit/fef4593608ce0da8ba9b69a39e369f76ea67177f))
+
 ### [0.8.2](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.8.1...v0.8.2) (2021-04-15)
 
 ### [0.8.1](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.8.0...v0.8.1) (2021-04-13)
