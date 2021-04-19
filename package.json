@@ -8,7 +8,7 @@
   "name": "redfoxfinn_io",
   "appName": "RedFoxFinn.github.io",
   "appId": "rff.dev.gh.io",
-  "version": "0.9.9",
+  "version": "0.9.10",
   "private": true,
   "development_software": [
     {
