@@ -62,8 +62,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage --verbose --watchAll --noStackTrace --transformIgnorePatterns 'node_modules/*'",
-    "ci": "CI=true react-scripts test --coverage --verbose --watch=false --watchAll --noStackTrace --transformIgnorePatterns 'node_modules/*' --forceExit",
+    "test": "react-scripts test --coverage --watchAll --verbose --noStackTrace --transformIgnorePatterns 'node_modules/*'",
+    "ci": "CI=true react-scripts test --coverage --verbose --noStackTrace --transformIgnorePatterns 'node_modules/*' --forceExit",
     "eject": "react-scripts eject",
     "cm": "git-cz",
     "release": "standard-version",
@@ -108,6 +108,19 @@
     }
   },
   "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/src/data/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
     "coverageReporters": [
       "json-summary",
       "text",
