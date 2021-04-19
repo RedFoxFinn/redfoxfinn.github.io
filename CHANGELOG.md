@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.2](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.9.1...v0.9.2) (2021-04-19)
+
+
+### Bug Fixes
+
+* workflow fix ([dae5b8c](https://github.com/RedFoxFinn/RedFoxFinn.github.io/commit/dae5b8c294297991274994481b50ac970b37cd17))
+
 ### [0.9.1](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.9.0...v0.9.1) (2021-04-19)
 
 ## [0.9.0](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.8.3...v0.9.0) (2021-04-15)
