@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/components/footer.jsx</title>
+    <title>Code coverage report for src/tools/checker.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> footer.jsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/tools</a> checker.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -81,15 +81,7 @@
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -98,62 +90,46 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">86x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable import/no-anonymous-default-export */
+&nbsp;
 /*
   Author:       RedFoxFinn - Antti Aarnio
   Project:      RedFoxFinn.github.io
-  File:         ./src/components/footer.jsx
-  Description:  Component that provides footer element for the application
+  File:         ./src/tools/checker.js
+  Description:  Tool that does various checks for other tools or components
 */
 &nbsp;
-import React from 'react';
-import styles from '../tools/styles';
-import text from '../tools/text';
-import wrapTextDev from '../tools/wrapTextDev';
+const OPT = Object.freeze({
+  LANG: ['en','fi'],
+  THEME: ['dark', 'light']
+});
 &nbsp;
-/*
-  Function name:      Footer
-  Function type:      React functional component
-  Desctiption:        Footer returns footer section of the page as component for rendering
-                      Footer shows following information:
-                      application name
-                      application version
-  Parameters:         Footer takes and uses following props (parameters):
-                      id | generated component id
-*/
-&nbsp;
-const Footer = (props) =&gt; {
-  const dateTime = new Date();
-  return &lt;section id={`${props.id}`} data-testid={`${props.id}`} style={styles.row()}&gt;
-    &lt;p id={`${props.id}.first`} data-testid={`${props.id}.first`} style={styles.footer_first()}&gt;{text.appName()}&lt;/p&gt;
-    &lt;p id={`${props.id}.second`} data-testid={`${props.id}.second`} style={styles.underlined(dateTime.getDay())}&gt;{wrapTextDev(`v${text.version()}`)}&lt;/p&gt;
-  &lt;/section&gt;;
+const langIsValid = (lang) =&gt; {
+  return OPT.LANG.includes(lang);
 };
 &nbsp;
-export default Footer;</pre></td></tr></table></pre>
+const themeIsValid = (theme) =&gt; {
+  return OPT.THEME.includes(theme);
+};
+&nbsp;
+export default {
+  langIsValid, themeIsValid
+};</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
