@@ -63,7 +63,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage --verbose --watchAll --noStackTrace --transformIgnorePatterns 'node_modules/*'",
-    "ci": "CI=true react-scripts test --coverage --verbose --watchAll --noStackTrace --transformIgnorePatterns 'node_modules/*' --forceExit",
+    "ci": "CI=true react-scripts test --coverage --verbose --watch=false --watchAll --noStackTrace --transformIgnorePatterns 'node_modules/*' --forceExit",
     "eject": "react-scripts eject",
     "cm": "git-cz",
     "release": "standard-version",
