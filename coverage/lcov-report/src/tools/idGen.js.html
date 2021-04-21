@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>24/24</span>
+                <span class='fraction'>0/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>22/22</span>
+                <span class='fraction'>0/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>24/24</span>
+                <span class='fraction'>0/24</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -100,30 +100,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">77x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -135,30 +135,30 @@
   Description:  Tool that generates id's for the components or elements using parent id
 */
 &nbsp;
-const idGen = (parentId, idFor, ...rest) =&gt; {
-  switch (idFor) {
-    case 'app': return `${parentId}.app`;
-    case 'header': return `${parentId}.app.header`;
-    case 'footer': return `${parentId}.app.footer`;
-    case 'navigator': return `${parentId}.app.navigator`;
-    case 'home': return `${parentId}.app.home`;
-    case 'about': return `${parentId}.app.about`;
-    case 'cv': return `${parentId}.app.cv`;
-    case 'links': return `${parentId}.app.links`;
-    case 'navHome': return `${parentId}.navHome`;
-    case 'navCV': return `${parentId}.navCV`;
-    case 'navAbout': return `${parentId}.navAbout`;
-    case 'navLinks': return `${parentId}.navLinks`;
-    case 'text': return `${parentId}.text.${rest[0]}`;
-    case 'shortText': return `${parentId}.shortText.${rest[0]}`;
-    case 'longText': return `${parentId}.longText.${rest[0]}`;
-    case 'headerText': return `${parentId}.headerText`;
-    case 'detailText': return `${parentId}.detailText.${rest[0]}`;
-    case 'packageText': return `${parentId}.packageText.${rest[0]}`;
-    case 'selectors': return `${parentId}.selectors`;
-    case 'themeSelector': return `${parentId}.theme.${rest[0]}`;
-    case 'languageSelector': return `${parentId}.language.${rest[0]}`;
-    default: return `${parentId}.default`;
+const idGen = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(p</span>arentId, idFor, ...rest) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  switch (idFor) {</span>
+    case 'app': <span class="cstat-no" title="statement not covered" >return `${parentId}.app`;</span>
+    case 'header': <span class="cstat-no" title="statement not covered" >return `${parentId}.app.header`;</span>
+    case 'footer': <span class="cstat-no" title="statement not covered" >return `${parentId}.app.footer`;</span>
+    case 'navigator': <span class="cstat-no" title="statement not covered" >return `${parentId}.app.navigator`;</span>
+    case 'home': <span class="cstat-no" title="statement not covered" >return `${parentId}.app.home`;</span>
+    case 'about': <span class="cstat-no" title="statement not covered" >return `${parentId}.app.about`;</span>
+    case 'cv': <span class="cstat-no" title="statement not covered" >return `${parentId}.app.cv`;</span>
+    case 'links': <span class="cstat-no" title="statement not covered" >return `${parentId}.app.links`;</span>
+    case 'navHome': <span class="cstat-no" title="statement not covered" >return `${parentId}.navHome`;</span>
+    case 'navCV': <span class="cstat-no" title="statement not covered" >return `${parentId}.navCV`;</span>
+    case 'navAbout': <span class="cstat-no" title="statement not covered" >return `${parentId}.navAbout`;</span>
+    case 'navLinks': <span class="cstat-no" title="statement not covered" >return `${parentId}.navLinks`;</span>
+    case 'text': <span class="cstat-no" title="statement not covered" >return `${parentId}.text.${rest[0]}`;</span>
+    case 'shortText': <span class="cstat-no" title="statement not covered" >return `${parentId}.shortText.${rest[0]}`;</span>
+    case 'longText': <span class="cstat-no" title="statement not covered" >return `${parentId}.longText.${rest[0]}`;</span>
+    case 'headerText': <span class="cstat-no" title="statement not covered" >return `${parentId}.headerText`;</span>
+    case 'detailText': <span class="cstat-no" title="statement not covered" >return `${parentId}.detailText.${rest[0]}`;</span>
+    case 'packageText': <span class="cstat-no" title="statement not covered" >return `${parentId}.packageText.${rest[0]}`;</span>
+    case 'selectors': <span class="cstat-no" title="statement not covered" >return `${parentId}.selectors`;</span>
+    case 'themeSelector': <span class="cstat-no" title="statement not covered" >return `${parentId}.theme.${rest[0]}`;</span>
+    case 'languageSelector': <span class="cstat-no" title="statement not covered" >return `${parentId}.language.${rest[0]}`;</span>
+    default: <span class="cstat-no" title="statement not covered" >return `${parentId}.default`;</span>
   }
 };
 &nbsp;
@@ -169,7 +169,7 @@ export default idGen;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Apr 21 2021 10:43:47 GMT+0300 (Eastern European Summer Time)
+                at Wed Apr 21 2021 11:32:10 GMT+0300 (Eastern European Summer Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

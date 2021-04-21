@@ -62,8 +62,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --notify --watchAll --noStackTrace --transformIgnorePatterns 'node_modules/*'",
-    "ci": "react-scripts test --noStackTrace --transformIgnorePatterns 'node_modules/*'",
+    "test": "react-scripts test --coverage --verbose --notify --watchAll --noStackTrace --transformIgnorePatterns 'node_modules/*'",
+    "ci": "react-scripts test --coverage --verbose --noStackTrace --transformIgnorePatterns 'node_modules/*'",
     "eject": "react-scripts eject",
     "cm": "git-cz",
     "release": "standard-version",
@@ -108,9 +108,6 @@
     }
   },
   "jest": {
-    "slowTestTreshold": 5,
-    "verbose": true,
-    "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!<rootDir>/node_modules/",
