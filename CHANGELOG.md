@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.23](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.9.22...v0.9.23) (2021-04-21)
+
+
+### Bug Fixes
+
+* codecov.yaml => codecov.yml ([060c45a](https://github.com/RedFoxFinn/RedFoxFinn.github.io/commit/060c45a3e0e7c8e00ad859e927db04b9ee96813d))
+
 ### [0.9.22](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.9.21...v0.9.22) (2021-04-21)
 
 ### [0.9.21](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.9.20...v0.9.21) (2021-04-21)
