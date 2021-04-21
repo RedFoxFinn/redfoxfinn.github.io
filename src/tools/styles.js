@@ -12,6 +12,10 @@ const units = Object.freeze({
     EM: 'em'
 });
 
+export const getUnits = () => {
+    return units;
+};
+
 const sizes = Object.freeze({
     XXS: 0.25,
     XS: 0.5,
@@ -21,6 +25,10 @@ const sizes = Object.freeze({
     XL: 1.5,
     XXL: 1.75
 });
+
+export const getSizes = () => {
+    return sizes;
+};
 
 const colors = Object.freeze({
     BLACK: 'black',
@@ -39,30 +47,54 @@ const colors = Object.freeze({
     WHITE: 'white'
 });
 
-const customColors = ({
+export const getColors = () => {
+    return colors;
+};
+
+const customColors = Object.freeze({
     RED_C: '#dc4233',
     GRADIENT_LIGHT: `linear-gradient(-45deg, ${colors.WHITE}, ${colors.DARKORANGE})`,
     GRADIENT_DARK: `linear-gradient(-45deg, ${colors.BLACK}, ${colors.DIMGRAY}, ${colors.DARKORANGE})`
 });
 
+export const getCustomColors = () => {
+    return customColors
+};
+
 const decorations = Object.freeze({
     UNDERLINE: 'underline'
 });
+
+export const getDecorations = () => {
+    return decorations;
+};
 
 const extras = Object.freeze({
     SOLID: 'solid',
     DASHED: 'dashed'
 });
 
+export const getExtras = () => {
+    return extras;
+};
+
 const directions = Object.freeze({
     COLUMN: 'column',
     ROW: 'row'
 });
 
+export const getDirections = () => {
+    return directions;
+};
+
 const display = Object.freeze({
     BLOCK: 'block',
     FLEX: 'flex'
 });
+
+export const getDisplay = () => {
+    return display;
+};
 
 const positions = Object.freeze({
     TOP: 'top',
@@ -71,6 +103,10 @@ const positions = Object.freeze({
     LEFT: 'left',
     RIGHT: 'right'
 });
+
+export const getPositions = () => {
+    return positions;
+};
 
 // Function definitions for styling tool
 
@@ -124,6 +160,13 @@ const header_optional = () => {
     return {
         fontSize: `${2*sizes.L}${units.EM}`, 
         color: colors.BLACK
+    };
+};
+
+const header_second = () => {
+    return {
+        fontSize: `${sizes.M}${units.EM}`, 
+        color: colors.GREY
     };
 };
 
@@ -203,13 +246,6 @@ const underlined = (weekday, size = `${sizes.M}${units.EM}`, color = colors.GREY
             textDecoration: `${decorations.UNDERLINE} ${extras.SOLID} black`
         };
     }
-};
-
-const header_second = () => {
-    return {
-        fontSize: `${sizes.M}${units.EM}`, 
-        color: colors.GREY
-    };
 };
 
 const textS = () => {

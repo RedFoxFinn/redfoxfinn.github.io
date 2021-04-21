@@ -44,13 +44,13 @@ const setTheme = (theme) => {
         break;
       }
       default: {
-        setDark();
+        setLight();
         break;
       }
     }
     return null;
   } else {
-    setDark();
+    setLight();
     return null;
   }
 };
