@@ -74,7 +74,6 @@ const About = (props) => {
   texts = text.about(lang);
   return <section id={`${props.id}`} data-testid={`${props.id}`} style={styles.componentMaster()}>
     <Text.HeaderText id={idGen(`${props.id}`, 'headerText')} content={texts[0]} altStyle={true}/>
-    {generateFrameworksLibraries(props.id, lang)}
     {generateSoftwareTools(props.id)}
   </section>;
 };

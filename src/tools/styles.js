@@ -149,6 +149,16 @@ const infoRow = () => {
     };
 };
 
+const navigation = () => {
+    return {
+        display: display.FLEX, 
+        flexDirection: directions.ROW, 
+        alignItems: positions.CENTER, 
+        alignContent: positions.CENTER,
+        margin: `${sizes.M}${units.EM}`
+    };
+};
+
 const header_first = () => {
     return {
         fontSize: `${3*sizes.M}${units.EM}`, 
@@ -319,6 +329,24 @@ const marginL = () => {
     };
 };
 
+const detailsSectionXS = () => {
+    return {
+        margin: `${sizes.XS}${units.EM}`
+    };
+};
+
+const detailsSectionS = () => {
+    return {
+        margin: `${sizes.S}${units.EM}`
+    };
+};
+
+const detailsSectionM = () => {
+    return {
+        margin: `${sizes.M}${units.EM}`
+    };
+};
+
 const getBackgroundGradient = (selection) => {
     return selection === 'light'
     ? customColors.GRADIENT_LIGHT
@@ -348,10 +376,10 @@ const rootElement = () => {
 
 export default {
     getBackgroundGradient, rootElement, componentMaster,
-    row, column, infoRow, 
+    row, column, infoRow, navigation,
     sortingButton, sortings, success,
     header_first, header_second, header_optional, underlined,
     footer_first, footer_second, footer_third,
     textS, textM, textL, textXL,
-    marginS, marginM, marginL
+    marginS, marginM, marginL, detailsSectionXS, detailsSectionS, detailsSectionM
 };

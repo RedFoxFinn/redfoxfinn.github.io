@@ -28,7 +28,7 @@ const Navigator = (props) => {
   const navAboutId = idGen(`${props.id}`, 'navAbout');
   const navCvId = idGen(`${props.id}`, 'navCV');
   const navLinksId = idGen(`${props.id}`, 'navLinks');
-  return <nav id={`${props.id}`} data-testid={`${props.id}`} style={styles.row()}>
+  return <nav id={`${props.id}`} data-testid={`${props.id}`} style={styles.navigation()}>
     <Link id={navHomeId} data-testid={navHomeId} style={{marginLeft: '1em', marginRight: '1em'}} to='/'>{text.navHome(lang)}</Link>
     <Link id={navCvId} data-testid={navCvId} style={{marginLeft: '1em', marginRight: '1em'}} to='/cv'>{text.navCV(lang)}</Link>
     <Link id={navLinksId} data-testid={navLinksId} style={{marginLeft: '1em', marginRight: '1em'}} to='/links'>{text.navLinks(lang)}</Link>

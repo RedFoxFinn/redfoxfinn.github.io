@@ -88,6 +88,20 @@ describe('tool unit tests - styles', () => {
     expect(style.alignContent).toBeTruthy();
     expect(style.alignContent).toMatch(positions.CENTER);
   });
+  it('navigation', () => {
+    const style = styles.navigation();
+    expect(style).toBeTruthy();
+    expect(style.display).toBeTruthy();
+    expect(style.display).toMatch(display.FLEX);
+    expect(style.flexDirection).toBeTruthy();
+    expect(style.flexDirection).toMatch(directions.ROW);
+    expect(style.alignItems).toBeTruthy();
+    expect(style.alignItems).toMatch(positions.CENTER);
+    expect(style.alignContent).toBeTruthy();
+    expect(style.alignContent).toMatch(positions.CENTER);
+    expect(style.margin).toBeTruthy();
+    expect(style.margin).toMatch(`${sizes.M}${units.EM}`);
+  });
   it('header_first', () => {
     const style = styles.header_first();
     expect(style).toBeTruthy();
@@ -290,5 +304,23 @@ describe('tool unit tests - styles', () => {
     expect(style.alignItems).toMatch(positions.CENTER);
     expect(style.alignContent).toBeTruthy();
     expect(style.alignContent).toMatch(positions.CENTER);
+  });
+  it('detailsSectionXS', () => {
+    const style = styles.detailsSectionXS();
+    expect(style).toBeTruthy();
+    expect(style.margin).toBeTruthy();
+    expect(style.margin).toMatch(`${sizes.XS}${units.EM}`);
+  });
+  it('detailsSectionS', () => {
+    const style = styles.detailsSectionS();
+    expect(style).toBeTruthy();
+    expect(style.margin).toBeTruthy();
+    expect(style.margin).toMatch(`${sizes.S}${units.EM}`);
+  });
+  it('detailsSectionM', () => {
+    const style = styles.detailsSectionM();
+    expect(style).toBeTruthy();
+    expect(style.margin).toBeTruthy();
+    expect(style.margin).toMatch(`${sizes.M}${units.EM}`);
   });
 });

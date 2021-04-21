@@ -75,23 +75,20 @@ const HeaderText = (props) => {
 */
 
 const DetailText = (props) => {
-  const generateDetailsId = () => `${props.id}.details`;
   const generateSummaryId = () => `${props.id}.details.summary`;
   const generateDetailsContentId = (index) => `${props.id}.details.content.${index}`;
-  return <section id={`${props.id}`} data-testid={`${props.id}`}>
-    <details id={generateDetailsId()} data-testid={generateDetailsId()}>
-      <summary id={generateSummaryId()} data-testid={generateSummaryId()}
-        style={props.altSummaryStyle ? styles.textL() : styles.textM()}>
-          {props.content.name}</summary>
-      {props.content.with.map(ext => <p
-        id={generateDetailsContentId(props.content.with.indexOf(ext))}
-        data-testid={generateDetailsContentId(props.content.with.indexOf(ext))}
-        key={generateDetailsContentId(props.content.with.indexOf(ext))}
-        style={props.altDetailStyle ? styles.textL() : styles.textM()}>
-          {ext.name}
-        </p>)}
-    </details>
-  </section>;
+  return <details id={`${props.id}`} data-testid={`${props.id}`} style={styles.detailsSectionM()}>
+    <summary id={generateSummaryId()} data-testid={generateSummaryId()}
+      style={props.altSummaryStyle ? styles.textL() : styles.textM()}>
+        {props.content.name}</summary>
+    {props.content.with.map(ext => <p
+      id={generateDetailsContentId(props.content.with.indexOf(ext))}
+      data-testid={generateDetailsContentId(props.content.with.indexOf(ext))}
+      key={generateDetailsContentId(props.content.with.indexOf(ext))}
+      style={props.altDetailStyle ? styles.textL() : styles.textM()}>
+        {ext.name}
+      </p>)}
+  </details>;
 };
 
 /*
@@ -107,23 +104,19 @@ const DetailText = (props) => {
 */
 
 const PackageText = (props) => {
-  const generateDetailsId = () => `${props.id}.details`;
   const generateSummaryId = () => `${props.id}.details.summary`;
   const generateDetailsContentId = (index) => `${props.id}.details.content.${index}`;
-  return <section id={`${props.id}`} data-testid={`${props.id}`}>
-    <details id={generateDetailsId()} data-testid={generateDetailsId()}
-      style={props.altStyle ? styles.textL() : styles.textM()}>
-      <summary id={generateSummaryId()} data-testid={generateSummaryId()}
-        style={props.altSummaryStyle ? styles.textL() : styles.textM()}>{props.packageTypes}</summary>
-      {props.packages.map(dep => {
-        const id = generateDetailsContentId(props.packages.indexOf(dep));
-        return <p id={id} data-testid={id} key={id}
-          style={props.altDetailStyle ? styles.textL() : styles.textM()}>
-          {`${dep[0]}: ${dep[1]}`}
-        </p>
-      })}
-    </details>
-  </section>;
+  return <details id={`${props.id}`} data-testid={`${props.id}`} style={styles.detailsSectionM()}>
+    <summary id={generateSummaryId()} data-testid={generateSummaryId()}
+      ><p style={props.altSummaryStyle ? styles.textL() : styles.textM()}>{props.packageTypes}</p></summary>
+    {props.packages.map(dep => {
+      const id = generateDetailsContentId(props.packages.indexOf(dep));
+      return <p id={id} data-testid={id} key={id}
+        style={props.altDetailStyle ? styles.textL() : styles.textM()}>
+        {`${dep[0]}: ${dep[1]}`}
+      </p>
+    })}
+  </details>;
 };
 
 export default {ShortText, LongText, HeaderText, DetailText, PackageText};
