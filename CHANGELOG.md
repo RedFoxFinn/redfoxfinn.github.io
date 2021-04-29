@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.28](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.9.27...v0.9.28) (2021-04-29)
+
 ### [0.9.27](https://github.com/RedFoxFinn/RedFoxFinn.github.io/compare/v0.9.26...v0.9.27) (2021-04-21)
 
 
