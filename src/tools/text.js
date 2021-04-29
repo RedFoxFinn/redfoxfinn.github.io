@@ -136,20 +136,16 @@ const themeSelectorLight = (lang, current) => {
 };
 
 const devSoftware = () => {
-  return packageInfo.development_software;
-};
-
-const devPackages = () => {
-  return Object.entries(packageInfo.devDependencies);
+  return content.about.software_tools;
 };
 
 const packages = () => {
-  return Object.entries(packageInfo.dependencies);
+  return content.about.packages;
 };
 
 export default {
   author, version, appId, appName,
-  about, home, devSoftware, packages, devPackages,
+  about, home, devSoftware, packages,
   navHome, navAbout, navCV, navLinks,
   dependencies, devDependencies, themeSelectorDark, themeSelectorLight
 };

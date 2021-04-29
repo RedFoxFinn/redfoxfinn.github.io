@@ -15,7 +15,104 @@
     "info": {
       "en": [],
       "fi": []
-    }
+    },
+    "packages": [
+      {
+        "name": "@testing-library/jest-dom",
+        "dev": false
+      },
+      {
+        "name": "@testing-library/react",
+        "dev": false
+      },
+      {
+        "name": "@testing-library/user-event",
+        "dev": false
+      },
+      {
+        "name": "react",
+        "dev": false
+      },
+      {
+        "name": "react-dom",
+        "dev": false
+      },
+      {
+        "name": "react-router-dom",
+        "dev": false
+      },
+      {
+        "name": "react-scripts",
+        "dev": false
+      },
+      {
+        "name": "@commitlint/cli",
+        "dev": true
+      },
+      {
+        "name": "@commitlint/config-conventional",
+        "dev": true
+      },
+      {
+        "name": "commitizen",
+        "dev": true
+      },
+      {
+        "name": "cz-conventional-changelog",
+        "dev": true
+      },
+      {
+        "name": "gh-pages",
+        "dev": true
+      },
+      {
+        "name": "husky",
+        "dev": true
+      },
+      {
+        "name": "standard-version",
+        "dev": true
+      }
+    ],
+    "software_tools": [
+      {
+        "name": "Yarn package manager"
+      },
+      {
+        "name": "npm"
+      },
+      {
+        "name": "Visual Studio Code",
+        "with": [
+          {
+            "name": "Remote Development"
+          },
+          {
+            "name": "Remote - SSH"
+          },
+          {
+            "name": "ESLint"
+          },
+          {
+            "name": "Rainbow Brackets"
+          },
+          {
+            "name": "Auto Rename Tag"
+          }
+        ]
+      },
+      {
+        "name": "Google Chrome",
+        "with": [
+          {
+            "name": "React Developer Tools"
+          },
+          {
+            "name": "Redux DevTools"
+          }
+        ]
+      }
+    ]
   },
   "author": ["RedFoxFinn","Antti Aarnio"],
   "cv": {
@@ -54,7 +151,7 @@
         "expiration": "11/2021"
       },
       {
-        "name": {"en": "Drivers licence", "fi": "ajokortti"},
+        "name": {"en": "Drivers licence", "fi": "Ajokortti"},
         "dated": "06/2012",
         "class": ["B", "M", "T"]
       }
@@ -167,12 +264,13 @@
       },
       {
         "institution": {"en": "Rastor", "fi": "Rastor"},
-        "degree": {"en": "", "fi": ""},
-        "completion": ""
+        "degree": {"en": "Further Vocational Qualification of Security Guard", "fi": "Vartijan ammattitutkinto"},
+        "completion": "04/2015"
       },
       {
-        "institution": {"en": "", "fi": ""},
-        "degree": {"en": "", "fi": ""}
+        "institution": {"en": "Omnia", "fi": "Omnia"},
+        "degree": {"en": "Vocational Qualification in Electrical Engineering", "fi": "Sähkö- ja automaatiotekniikan perustutkinto"},
+        "completion": "12/2017"
       }
     ],
     "language_skills": [
